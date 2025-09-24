@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="theme-dark" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootcamp week 4: Web applications</title>
+    <link rel="stylesheet" href="/assets/built/screen.css?v=44846b56b4">
+
+    <link rel="icon" href="https://snptrs.dev/content/images/size/w256h256/2023/05/profile-photo.png" type="image/png">
+    <link rel="canonical" href="https://snptrs.dev/bootcamp-week-4-web-applications/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Sean Peters">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Bootcamp week 4: Web applications">
+    <meta property="og:description" content="Everything we&#x27;ve learnt so far came together this week and we finally got to create some actual web apps! 🥳
+
+Topics for the week included:
+
+ * Understanding the basics of HTTP requests and responses.
+ * Using Sinatra to create routes and serve webpages.
+ * Writing unit and integration tests for web applications.
+ * Deploying database-driven">
+    <meta property="og:url" content="https://snptrs.dev/bootcamp-week-4-web-applications/">
+    <meta property="og:image" content="https://snptrs.dev/content/images/2023/06/week-4-web-header.jpg">
+    <meta property="article:published_time" content="2023-06-05T20:25:29.000Z">
+    <meta property="article:modified_time" content="2025-08-05T09:57:28.000Z">
+    <meta property="article:tag" content="Bootcamp">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bootcamp week 4: Web applications">
+    <meta name="twitter:description" content="Everything we&#x27;ve learnt so far came together this week and we finally got to create some actual web apps! 🥳
+
+Topics for the week included:
+
+ * Understanding the basics of HTTP requests and responses.
+ * Using Sinatra to create routes and serve webpages.
+ * Writing unit and integration tests for web applications.
+ * Deploying database-driven">
+    <meta name="twitter:url" content="https://snptrs.dev/bootcamp-week-4-web-applications/">
+    <meta name="twitter:image" content="https://snptrs.dev/content/images/2023/06/week-4-web-header.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Sean Peters">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Bootcamp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="800">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Sean Peters",
+        "url": "https://snptrs.dev/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://snptrs.dev/content/images/size/w256h256/2023/05/profile-photo.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Sean Peters",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.gravatar.com/avatar/dabbf76e2f09bc5d95495262e8cb77d8?s=250&r=x&d=mp",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://snptrs.dev/author/sean/",
+        "sameAs": []
+    },
+    "headline": "Bootcamp week 4: Web applications",
+    "url": "https://snptrs.dev/bootcamp-week-4-web-applications/",
+    "datePublished": "2023-06-05T20:25:29.000Z",
+    "dateModified": "2025-08-05T09:57:28.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://snptrs.dev/content/images/2023/06/week-4-web-header.jpg",
+        "width": 1200,
+        "height": 800
+    },
+    "keywords": "Bootcamp",
+    "description": "Everything we&#x27;ve learnt so far came together this week and we finally got to create some actual web apps! 🥳\n\nTopics for the week included:\n\n * Understanding the basics of HTTP requests and responses.\n * Using Sinatra to create routes and serve webpages.\n * Writing unit and integration tests for web applications.\n * Deploying database-driven apps to cloud hosting platforms.\n\nEveryone seemed to enjoy this week more than last week, and the workload was more manageable. It&#x27;s been a definite morale-",
+    "mainEntityOfPage": "https://snptrs.dev/bootcamp-week-4-web-applications/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.118">
+    <link rel="alternate" type="application/rss+xml" title="Sean Peters" href="https://snptrs.dev/rss/">
+    
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.5/umd/sodo-search.min.js" data-key="b7f59351f751aeb6a1bb195953" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.5/umd/main.css" data-sodo-search="https://snptrs.dev/" data-locale="en" crossorigin="anonymous"></script>
+    
+    <link href="https://snptrs.dev/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=44846b56b4"></script><style>:root {--ghost-accent-color: #81c6bf;}</style>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=44846b56b4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    .gh-head-menu .nav-mastodon a,
+    .gh-head-menu .nav-github a,
+    .gh-head-menu .nav-linkedin a {
+        font-size: 0 !important;
+    }
+
+    .gh-head-menu .nav-mastodon a::before,
+    .gh-head-menu .nav-github a::before,
+    .gh-head-menu .nav-linkedin a::before {
+        font-family: "Font Awesome 6 Brands";
+        display: inline-block;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .gh-head-menu .nav-mastodon a::before {content: "\f4f6"}
+    .gh-head-menu .nav-github a::before {content: "\f09b"}
+    .gh-head-menu .nav-linkedin a::before {content: "\f08c"}
+</style>
+    <link rel="preconnect" href="https://fonts.bunny.net"><link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600"><style>:root {--gh-font-body: Inter;}</style>
+</head>
+
+<body class='post-template tag-bootcamp tag-hash-import-2024-04-13-13-16 tag-hash-import-2024-09-25-14-19 gh-font-body-inter is-head-left-logo'>
+<div class="site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <a class="gh-head-logo" href="https://snptrs.dev">
+                            Sean Peters
+                    </a>
+                </div>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                <button class="gh-burger" aria-label="Toggle menu"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-home"><a href="https://snptrs.dev/">Home</a></li>
+    <li class="nav-bootcamp-diary"><a href="https://snptrs.dev/tag/bootcamp/">Bootcamp diary</a></li>
+    <li class="nav-github"><a href="https://github.com/snptrs">GitHub</a></li>
+    <li class="nav-linkedin"><a href="https://www.linkedin.com/in/snptrs">LinkedIn</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="site-content">
+        
+<main class="site-main">
+
+        <article class="single post tag-bootcamp tag-hash-import-2024-04-13-13-16 tag-hash-import-2024-09-25-14-19">
+
+        <header class="single-header gh-canvas">
+            <div class="single-meta">
+                <span class="single-meta-item single-meta-date">
+                    <time datetime="2023-06-05">
+                        5 June 2023
+                    </time>
+                </span>
+                    <span class="single-meta-item single-meta-length">
+                        3 min read
+                    </span>
+                    <span class="single-meta-item single-meta-tag">
+                        <a class="post-tag post-tag-bootcamp" href="/tag/bootcamp/">
+                            Bootcamp
+                        </a>
+                    </span>
+            </div>
+
+            <h1 class="single-title">Bootcamp week 4: Web applications</h1>
+
+
+        </header>
+
+    <div class="single-content gh-content gh-canvas">
+        <p>Everything we've learnt so far came together this week and we finally got to create some actual web apps! 🥳</p><p>Topics for the week included:</p><ul><li>Understanding the basics of HTTP requests and responses.</li><li>Using Sinatra to create routes and serve webpages.</li><li>Writing unit and integration tests for web applications.</li><li>Deploying database-driven apps to cloud hosting platforms.</li></ul><p>Everyone seemed to enjoy this week more than last week, and the workload was more manageable. It's been a definite morale-boost to get a glimpse of what all this learning and endless hours of testing and debugging are training us be able to do.</p><h2 id="chitter-project">Chitter project</h2><p>The final project for the week was to build a basic Twitter clone. The requirements were for users to be able to:</p><ul><li>Register and log in.</li><li>Publish ‘Peeps’ and view a timeline of all the posts.</li><li>Tag other users who’d then get an email notification (this was a stretch requirement, but I managed to implement a basic version of it).</li></ul><figure class="kg-card kg-image-card"><img src="https://snptrs.dev/content/images/2023/06/wk-4-chitter-screenshot.png" class="kg-image" alt="Screenshot of ‘Chitter’, a basic social media feed" loading="lazy" width="2000" height="1409" srcset="https://snptrs.dev/content/images/size/w600/2023/06/wk-4-chitter-screenshot.png 600w, https://snptrs.dev/content/images/size/w1000/2023/06/wk-4-chitter-screenshot.png 1000w, https://snptrs.dev/content/images/size/w1600/2023/06/wk-4-chitter-screenshot.png 1600w, https://snptrs.dev/content/images/size/w2400/2023/06/wk-4-chitter-screenshot.png 2400w" sizes="(min-width: 720px) 720px"></figure><p>The database for this project was more simple than for last week's <a href="https://snptrs.dev/bootcamp-week-3-databases/">Shop Manager</a> app. I just needed <code>users</code> and <code>peeps</code> tables, with a one-to-many relationship between then. If I were to implement proper threaded replies, I'd re-think the database schema as I think it might be more efficient to add a join table.</p><p>I used the <code>bcrypt</code> gem to hash and check user passwords, and Sinatra sessions to keep track of user login status. If a logged-out user tries to post a Peep, they’ll be redirected to the login screen.</p><p>Once I’d got the MVP up and running, I created a branch to work on the email notification feature. I really wanted to try and implement it, but didn’t think I’d have time to complete it over the weekend, so I developed it in a branch so that it wouldn’t affect my main app.</p><p>I used Mailgun to send notifications, and wrote a very (very) basic method to match <code>@mentions</code> at the start of a Peep. I then updated my Peep creation method to pass all new posts through this.</p><p>I was really pleased with the <a href="https://github.com/snptrs/bootcamp-chitter-project?ref=snptrs.dev">final product</a>. I even added a proper README with deploy instructions. I can’t imagine anyone would want to use this (slightly clunky and fairly flaky) app, but it’s there if anyone wants it!</p><div class="kg-card kg-callout-card kg-callout-card-green"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text"><strong>Week 4 takeaways</strong><br><strong>1. </strong>I learnt a lot from the Chitter project about encrypting and validating passwords, managing user sessions and sending transactional emails. <code>bcrypt</code> is amazing!<br><br><strong>2. </strong>Plan, plan, plan! I produced a lot of code this week, and with the number of different challenges and projects there were to juggle, it would have got really confusing if I hadn’t planned effectively. I’ve realised that spending lots of time of designing database schemas and application classes pays dividends further down the line.<br><br><strong>3. </strong>I had a bit of an epiphany this week about test-driven development. Up to now, I've felt like it was a bit of a pain to have to keep writing tests before I actually produce any code. But it all seemed to click into place this week, and I’ve realised it actually speeds up the development process (and saves time debugging) if you just put in the effort up front to write good tests.</div></div><div class="kg-card kg-callout-card kg-callout-card-pink"><div class="kg-callout-emoji">🤔</div><div class="kg-callout-text"><strong>Biggest challenges</strong><br><strong>1.</strong> I'm not doing a great job of tracking learning objectives (or updating my <a href="https://github.com/snptrs/til?ref=snptrs.dev">TIL</a>). I need to try and set aside some time every day to reflect on what I've learnt.</div></div>
+    </div>
+
+    <div class="gh-canvas">
+    <footer class="single-footer">
+
+        <div class="single-footer-left">
+            <div class="navigation navigation-previous">
+                <a class="navigation-link" href="/bootcamp-week-3-databases/" aria-label="Previous post">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon navigation-icon">
+    <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
+</svg>                </a>
+            </div>
+        </div>
+
+        <div class="single-footer-middle">
+        </div>
+
+        <div class="single-footer-right">
+            <div class="navigation navigation-next">
+                <a class="navigation-link" href="/bootcamp-week-5-group-project/" aria-label="Next post">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon navigation-icon">
+    <path d="M5.333 14.667v2.667h16L14 24.667l1.893 1.893L26.453 16 15.893 5.44 14 7.333l7.333 7.333h-16z"></path>
+</svg>                </a>
+            </div>
+        </div>
+
+    </footer>
+    </div>
+
+</article>
+
+                <section class="related-wrapper gh-canvas">
+        <h3 class="related-title">You might also like...</h3>
+        <div class="related-feed">
+                <article class="feed public post featured">
+
+    <div class="feed-calendar">
+        <div class="feed-calendar-day">
+            7
+        </div>
+        <div class="feed-calendar-month">
+            Aug
+        </div>
+    </div>
+
+    <h2 class="feed-title">Bootcamp weeks 11 and 12: Trail app</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            4 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/bootcamp-weeks-11-12-trail-app/" aria-label="Bootcamp weeks 11 and 12: Trail app"></a>
+
+</article>
+                <article class="feed public post">
+
+    <div class="feed-calendar">
+        <div class="feed-calendar-day">
+            16
+        </div>
+        <div class="feed-calendar-month">
+            Jul
+        </div>
+    </div>
+
+    <h2 class="feed-title">Bootcamp weeks 8 and 9: Acebook</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            4 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/bootcamp-weeks-8-9-acebook/" aria-label="Bootcamp weeks 8 and 9: Acebook"></a>
+
+</article>
+                <article class="feed public post">
+
+    <div class="feed-calendar">
+        <div class="feed-calendar-day">
+            25
+        </div>
+        <div class="feed-calendar-month">
+            Jun
+        </div>
+    </div>
+
+    <h2 class="feed-title">Bootcamp week 7: Frontend JavaScript</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            3 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/bootcamp-week-7-frontend-javascript/" aria-label="Bootcamp week 7: Frontend JavaScript"></a>
+
+</article>
+                <article class="feed public post no-image">
+
+    <div class="feed-calendar">
+        <div class="feed-calendar-day">
+            17
+        </div>
+        <div class="feed-calendar-month">
+            Jun
+        </div>
+    </div>
+
+    <h2 class="feed-title">Bootcamp week 6: JavaScript fundamentals</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            2 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/bootcamp-week-6-javascript/" aria-label="Bootcamp week 6: JavaScript fundamentals"></a>
+
+</article>
+                <article class="feed public post featured">
+
+    <div class="feed-calendar">
+        <div class="feed-calendar-day">
+            12
+        </div>
+        <div class="feed-calendar-month">
+            Jun
+        </div>
+    </div>
+
+    <h2 class="feed-title">Bowling challenge</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            4 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/bootcamp-bowling-challenge/" aria-label="Bowling challenge"></a>
+
+</article>
+        </div>
+    </section>
+
+            
+</main>
+    </div>
+
+
+</div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src='/assets/built/main.min.js?v=44846b56b4'></script>
+
+<script src="https://tinylytics.app/embed/-38ZA4QuqpWLssNKdygF.js" defer></script>
+
+</body>
+</html>

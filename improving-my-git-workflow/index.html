@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="theme-dark" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Improving my Git workflow</title>
+    <link rel="stylesheet" href="/assets/built/screen.css?v=44846b56b4">
+
+    <link rel="icon" href="https://snptrs.dev/content/images/size/w256h256/2023/05/profile-photo.png" type="image/png">
+    <link rel="canonical" href="https://snptrs.dev/improving-my-git-workflow/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Sean Peters">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Improving my Git workflow">
+    <meta property="og:description" content="In my early experiments using AI for coding, I’d often get stuck in a spiral of it just hammering away adding more and more code to try and work around a problem that it didn’t understand. Once they start tunnelling, they think the only way out is to">
+    <meta property="og:url" content="https://snptrs.dev/improving-my-git-workflow/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556075798-4825dfaaf498?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;M3wxMTc3M3wwfDF8c2VhcmNofDF8fGdpdHxlbnwwfHx8fDE3NTMyNjA3MzJ8MA&amp;ixlib&#x3D;rb-4.1.0&amp;q&#x3D;80&amp;w&#x3D;2000">
+    <meta property="article:published_time" content="2025-07-23T08:55:50.000Z">
+    <meta property="article:modified_time" content="2025-07-23T13:22:37.000Z">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Improving my Git workflow">
+    <meta name="twitter:description" content="In my early experiments using AI for coding, I’d often get stuck in a spiral of it just hammering away adding more and more code to try and work around a problem that it didn’t understand. Once they start tunnelling, they think the only way out is to">
+    <meta name="twitter:url" content="https://snptrs.dev/improving-my-git-workflow/">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1556075798-4825dfaaf498?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;M3wxMTc3M3wwfDF8c2VhcmNofDF8fGdpdHxlbnwwfHx8fDE3NTMyNjA3MzJ8MA&amp;ixlib&#x3D;rb-4.1.0&amp;q&#x3D;80&amp;w&#x3D;2000">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Sean Peters">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="795">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Sean Peters",
+        "url": "https://snptrs.dev/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://snptrs.dev/content/images/size/w256h256/2023/05/profile-photo.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Sean Peters",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.gravatar.com/avatar/dabbf76e2f09bc5d95495262e8cb77d8?s=250&r=x&d=mp",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://snptrs.dev/author/sean/",
+        "sameAs": []
+    },
+    "headline": "Improving my Git workflow",
+    "url": "https://snptrs.dev/improving-my-git-workflow/",
+    "datePublished": "2025-07-23T08:55:50.000Z",
+    "dateModified": "2025-07-23T13:22:37.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDF8fGdpdHxlbnwwfHx8fDE3NTMyNjA3MzJ8MA&ixlib=rb-4.1.0&q=80&w=2000",
+        "width": 1200,
+        "height": 795
+    },
+    "description": "In my early experiments using AI for coding, I’d often get stuck in a spiral of it just hammering away adding more and more code to try and work around a problem that it didn’t understand. Once they start tunnelling, they think the only way out is to keep going through.\n\nNow I’m getting better at using these tools, I find it easier to spot when they’re going off track and get them to change course. But I realised that if I was in situations where I needed to nuke my whole feature branch to get b",
+    "mainEntityOfPage": "https://snptrs.dev/improving-my-git-workflow/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.118">
+    <link rel="alternate" type="application/rss+xml" title="Sean Peters" href="https://snptrs.dev/rss/">
+    
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.5/umd/sodo-search.min.js" data-key="b7f59351f751aeb6a1bb195953" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.5/umd/main.css" data-sodo-search="https://snptrs.dev/" data-locale="en" crossorigin="anonymous"></script>
+    
+    <link href="https://snptrs.dev/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=44846b56b4"></script><style>:root {--ghost-accent-color: #81c6bf;}</style>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=44846b56b4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    .gh-head-menu .nav-mastodon a,
+    .gh-head-menu .nav-github a,
+    .gh-head-menu .nav-linkedin a {
+        font-size: 0 !important;
+    }
+
+    .gh-head-menu .nav-mastodon a::before,
+    .gh-head-menu .nav-github a::before,
+    .gh-head-menu .nav-linkedin a::before {
+        font-family: "Font Awesome 6 Brands";
+        display: inline-block;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .gh-head-menu .nav-mastodon a::before {content: "\f4f6"}
+    .gh-head-menu .nav-github a::before {content: "\f09b"}
+    .gh-head-menu .nav-linkedin a::before {content: "\f08c"}
+</style>
+    <link rel="preconnect" href="https://fonts.bunny.net"><link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600"><style>:root {--gh-font-body: Inter;}</style>
+</head>
+
+<body class='post-template gh-font-body-inter is-head-left-logo'>
+<div class="site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <a class="gh-head-logo" href="https://snptrs.dev">
+                            Sean Peters
+                    </a>
+                </div>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                <button class="gh-burger" aria-label="Toggle menu"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-home"><a href="https://snptrs.dev/">Home</a></li>
+    <li class="nav-bootcamp-diary"><a href="https://snptrs.dev/tag/bootcamp/">Bootcamp diary</a></li>
+    <li class="nav-github"><a href="https://github.com/snptrs">GitHub</a></li>
+    <li class="nav-linkedin"><a href="https://www.linkedin.com/in/snptrs">LinkedIn</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="site-content">
+        
+<main class="site-main">
+
+        <article class="single post featured">
+
+        <header class="single-header gh-canvas">
+            <div class="single-meta">
+                <span class="single-meta-item single-meta-date">
+                    <time datetime="2025-07-23">
+                        23 July 2025
+                    </time>
+                </span>
+                    <span class="single-meta-item single-meta-length">
+                        1 min read
+                    </span>
+            </div>
+
+            <h1 class="single-title">Improving my Git workflow</h1>
+
+
+        </header>
+
+    <div class="single-content gh-content gh-canvas">
+        <p>In my early experiments using AI for coding, I’d often get stuck in a spiral of it just hammering away adding more and more code to try and work around a problem that it didn’t understand. Once they start tunnelling, they think the only way out is to keep going through.</p><p>Now I’m getting better at using these tools, I find it easier to spot when they’re going off track and get them to change course. But I realised that if I was in situations where I needed to nuke my whole feature branch to get back on track, I probably wasn’t using Git effectively.</p><p>So what I’m doing now is maintaining a temporary working branch off of my feature branch. For example, if I have a feature branch <code>user-auth</code>, I branch <code>t/user-auth</code> off of that. I commit to the temp branch after every meaningful change. Then when I know something’s working, I review the code, tidy it up and squash all those commits into the feature branch.</p><p>If everything goes wrong, I either undo a few commits from the temp branch and try again, or trash it and pick up where I left off on the feature branch.</p><p>This feels liberating because I don't have to worry about how many commits I’m making or how good my commit messages are. I’m the only person who sees the temp branch, and I make sure whatever I merge into the feature branch is of good enough quality to later do a PR into <code>main</code>.</p>
+    </div>
+
+    <div class="gh-canvas">
+    <footer class="single-footer">
+
+        <div class="single-footer-left">
+            <div class="navigation navigation-previous">
+                <a class="navigation-link" href="/bootcamp-weeks-11-12-trail-app/" aria-label="Previous post">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon navigation-icon">
+    <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
+</svg>                </a>
+            </div>
+        </div>
+
+        <div class="single-footer-middle">
+        </div>
+
+        <div class="single-footer-right">
+        </div>
+
+    </footer>
+    </div>
+
+</article>
+
+            
+            
+</main>
+    </div>
+
+
+</div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src='/assets/built/main.min.js?v=44846b56b4'></script>
+
+<script src="https://tinylytics.app/embed/-38ZA4QuqpWLssNKdygF.js" defer></script>
+
+</body>
+</html>
