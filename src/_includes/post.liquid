@@ -10,6 +10,7 @@ layout: default.liquid
     </header>
     <div class="mt-10 space-y-6 tracking-wide leading-loose prose-links">{{ content }}</div>
 </article>
+{% render "partials/lightbox.liquid" %}
 {% assign newerPost = collections.posts | getNextCollectionItem %}
 {% assign olderPost = collections.posts | getPreviousCollectionItem %}
 {% render "partials/post-nav.liquid", newerPost: newerPost, olderPost: olderPost %}

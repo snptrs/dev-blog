@@ -1,6 +1,6 @@
 ---
 title: Sean Peters
-layout: default.liquid
+layout: home.liquid
 pagination:
     data: collections.posts
     size: 15
@@ -16,20 +16,43 @@ permalink: "{% if pagination.pageNumber == 0 %}/{% else %}/more-posts/{{ paginat
              class="mb-5 w-32 h-32 rounded-full">
         <p class="text-gray-300">Hi 👋 I'm Sean. I'm a software developer.</p>
     </section>
-    <hr class="border-gray-600">
+    {% assign featured = collections.featured %}
+    {% if featured.size > 0 %}
+        <section class="px-6 pb-12 mx-auto max-w-5xl">
+            <h2 class="font-sans text-xs font-bold tracking-widest text-gray-400 uppercase">Featured posts</h2>
+            <hr class="mt-3 mb-8 border-gray-600">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                {% for post in featured %}
+                    <a href="{{ post.url }}" class="group">
+                        {% if post.data.coverImage %}
+                            <div class="overflow-hidden mb-4 rounded-lg aspect-video">
+                                <img src="{{ post.data.coverImage }}"
+                                     alt="{{ post.data.title }}"
+                                     eleventy:widths="400,750"
+                                     class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+                            </div>
+                        {% endif %}
+                        <h3 class="font-sans text-lg font-bold group-hover:text-gray-400">{{ post.data.title }}</h3>
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
 {% endif %}
-{% for post in pagination.items %}
-    <article class="py-10">
-        <h2 class="mb-2 text-3xl font-bold">
-            <a href="{{ post.url }}">{{ post.data.title }}</a>
-        </h2>
-        <p class="mb-4 text-sm text-gray-400">
-            <a href="{{ post.url }}">{{ post.date | date: '%-d %b %Y' }}</a>
-        </p>
-        {% if post.data.summary %}<p class="tracking-wide leading-relaxed">{{ post.data.summary }}</p>{% endif %}
-    </article>
-    {% unless forloop.last %}
-    <hr class="border-gray-600">
-{% endunless %}
+<div class="py-10 px-6 mx-auto max-w-2xl">
+    {% for post in pagination.items %}
+        <article>
+            <a href="{{ post.url }}" class="flex gap-6 items-center py-5 group">
+                <div class="flex-shrink-0 w-10 font-sans text-center text-accent">
+                    <div class="text-2xl font-bold leading-none">{{ post.date | date: '%-d' }}</div>
+                    <div class="text-xs tracking-wide uppercase">{{ post.date | date: '%b' }}</div>
+                </div>
+                <h2 class="flex-grow min-w-0 text-lg font-bold group-hover:text-gray-400 truncate">{{ post.data.title }}</h2>
+            </a>
+        </article>
+        {% unless forloop.last %}
+        <hr class="border-gray-700">
+    {% endunless %}
 {% endfor %}
 {% render "partials/pagination.liquid", pagination: pagination %}
+</div>

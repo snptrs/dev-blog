@@ -33,6 +33,14 @@ export default function (eleventyConfig) {
     pluginRss.getNewestCollectionItemDate,
   );
 
+  eleventyConfig.addCollection("featured", (collectionApi) => {
+    return collectionApi
+      .getFilteredByTag("posts")
+      .filter((post) => post.data.featured)
+      .sort((a, b) => b.date - a.date)
+      .slice(0, 3);
+  });
+
   const processor = postcss([tailwindcss(), cssnano({ preset: "default" })]);
 
   eleventyConfig.on("eleventy.before", async () => {
@@ -65,9 +73,37 @@ export default function (eleventyConfig) {
     watch: ["_site/assets/styles/**/*.css"],
   });
 
+  let mdLibrary;
   eleventyConfig.amendLibrary("md", (mdLib) => {
     mdLib.set({ typographer: true });
     mdLib.use(markdownitFootnote);
+    mdLibrary = mdLib;
+  });
+
+  const calloutPresets = {
+    takeaways: { icon: "💡", title: "Takeaways", color: "callout-green" },
+    challenges: {
+      icon: "🤔",
+      title: "Biggest challenges",
+      color: "callout-purple",
+    },
+  };
+
+  eleventyConfig.addPairedShortcode("callout", function (content, type) {
+    const preset = calloutPresets[type];
+    if (!preset) {
+      throw new Error(`Unknown callout type: "${type}"`);
+    }
+    const rendered = mdLibrary.render(content.trim());
+    return `<div class="callout ${preset.color} rounded-lg p-6 my-8">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl leading-tight">${preset.icon}</span>
+        <div>
+          <p class="font-sans font-bold text-lg mb-4">${preset.title}</p>
+          <div class="callout-body">${rendered}</div>
+        </div>
+      </div>
+    </div>`;
   });
 
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
