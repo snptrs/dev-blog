@@ -21,6 +21,7 @@
   "homepage": "https://github.com/snptrs/dev-blog#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11ty/font-awesome": "^1.0.1",
     "@tailwindcss/postcss": "^4.2.1",

@@ -1,3 +1,4 @@
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import fontAwesomePlugin from "@11ty/font-awesome";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import tailwindcss from "@tailwindcss/postcss";
@@ -16,6 +17,16 @@ export default function (eleventyConfig) {
     },
   });
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["webp", "png", "jpeg"],
+    widths: ["auto"],
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+    },
+  });
   eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
   eleventyConfig.addLiquidFilter(
     "getNewestCollectionItemDate",
@@ -61,7 +72,6 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
-  eleventyConfig.addPassthroughCopy("src/assets/images");
 
   return {
     dir: { input: "src", output: "_site" },

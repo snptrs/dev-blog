@@ -8,6 +8,16 @@ pagination:
 permalink: "{% if pagination.pageNumber == 0 %}/{% else %}/more-posts/{{ pagination.pageNumber }}/{% endif %}"
 ---
 
+{% if pagination.pageNumber == 0 %}
+    <section class="flex flex-col items-center pt-10 pb-16">
+        <img src="/assets/images/profile-photo.jpeg"
+             alt="Sean Peters"
+             eleventy:widths="320"
+             class="mb-5 w-32 h-32 rounded-full">
+        <p class="text-gray-300">Hi 👋 I'm Sean. I'm a software developer.</p>
+    </section>
+    <hr class="border-gray-600">
+{% endif %}
 {% for post in pagination.items %}
     <article class="py-10">
         <h2 class="mb-2 text-3xl font-bold">
