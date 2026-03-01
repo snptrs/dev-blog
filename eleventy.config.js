@@ -1,6 +1,7 @@
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import fontAwesomePlugin from "@11ty/font-awesome";
 import pluginRss from "@11ty/eleventy-plugin-rss";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import tailwindcss from "@tailwindcss/postcss";
 import { execSync } from "child_process";
 import cssnano from "cssnano";
@@ -17,6 +18,7 @@ export default function (eleventyConfig) {
     },
   });
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["webp", "png", "jpeg"],
     widths: ["auto"],
@@ -108,6 +110,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
+  eleventyConfig.addPassthroughCopy("src/assets/styles/prism-coldark-dark.css");
 
   return {
     dir: { input: "src", output: "_site" },
