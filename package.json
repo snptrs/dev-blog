@@ -1,0 +1,35 @@
+{
+  "name": "dev-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx eleventy",
+    "serve": "npx eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snptrs/dev-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/snptrs/dev-blog/issues"
+  },
+  "homepage": "https://github.com/snptrs/dev-blog#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@11ty/font-awesome": "^1.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@tailwindcss/postcss": "^4.2.1",
+    "cssnano": "^7.1.2",
+    "markdown-it-footnote": "^4.0.0",
+    "pagefind": "^1.4.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.2.1"
+  }
+}
