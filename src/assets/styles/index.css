@@ -18,6 +18,7 @@
 
 @theme {
   --font-sans: "Fira Sans", sans-serif;
+  --color-bg: #282c35;
   --color-accent: #1dbf90;
   --color-accent-dark: #17996f;
 }

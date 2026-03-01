@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="p-0 text-xl text-gray-200 bg-[#222426]">
+<html lang="en" class="p-0 text-xl text-gray-200 bg-bg">
     <head>
         <title>{{ title }}</title>
         <meta name="generator" content="{{ eleventy.generator }}">
@@ -13,5 +13,6 @@
     <body>
         {% render "partials/nav.liquid" %}
         <div class="py-10 px-6 mx-auto max-w-2xl text-left">{{ content }}</div>
+        {% getBundle "fontawesome" %}
     </body>
 </html>

@@ -1,3 +1,4 @@
+import fontAwesomePlugin from "@11ty/font-awesome";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import tailwindcss from "@tailwindcss/postcss";
 import { execSync } from "child_process";
@@ -8,6 +9,12 @@ import path from "path";
 import postcss from "postcss";
 
 export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(fontAwesomePlugin, {
+    defaultAttributes: {
+      width: "1.25em",
+      height: "1.25em",
+    },
+  });
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
   eleventyConfig.addLiquidFilter(
