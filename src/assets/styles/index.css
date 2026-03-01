@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Baskervville";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/baskervville-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Baskervville";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/baskervville-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Baskervville";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/baskervville-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/fira-sans-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/fira-sans-bold.woff2") format("woff2");
+}
+
+@theme {
+  --font-serif: "Baskervville", serif;
+  --font-sans: "Fira Sans", sans-serif;
+  --color-accent: #1dbf90;
+  --color-accent-dark: #17996f;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+}
+
+blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.5rem;
+  margin-left: 0;
+  font-style: italic;
+}
+
+.prose-links a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.prose-links a:hover {
+  text-decoration-color: var(--color-accent-dark);
+}
+
+hr.footnotes-sep {
+  border-color: #444;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.footnotes {
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+
+.footnotes ol {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+}
+
+.footnotes li::marker {
+  margin-right: 0.5rem;
+}
+
+.footnotes li p {
+  padding-left: 0.5rem;
+}
+
+.footnotes li {
+  margin-bottom: 1rem;
+}
+
+sup.footnote-ref a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+sup.footnote-ref a:hover {
+  color: var(--color-accent-dark);
+}
+
+a.footnote-backref {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a.footnote-backref:hover {
+  color: var(--color-accent-dark);
+}

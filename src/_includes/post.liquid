@@ -1,0 +1,19 @@
+---
+layout: default.liquid
+---
+
+<article class="mt-14" data-pagefind-body>
+    <header class="mb-10">
+        {% if title %}
+            <h1 class="mb-4 text-5xl font-bold">{{ title }}</h1>
+        {% else %}
+            <span data-pagefind-meta="title" data-pagefind-ignore hidden>{{ page.date | date: '%-d %b %Y' }}</span>
+        {% endif %}
+        <p class="font-sans text-sm text-gray-400">{{ page.date | date: '%-d %b %Y' }}</p>
+        <hr class="mt-6 w-12 border-gray-600">
+    </header>
+    <div class="mt-10 space-y-6 tracking-wide leading-loose prose-links">{{ content }}</div>
+</article>
+{% assign newerPost = collections.posts | getNextCollectionItem %}
+{% assign olderPost = collections.posts | getPreviousCollectionItem %}
+{% render "partials/post-nav.liquid", newerPost: newerPost, olderPost: olderPost %}

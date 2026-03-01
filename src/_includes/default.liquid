@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" class="p-0 font-serif text-xl text-gray-200 bg-[#222426]">
+    <head>
+        <title>{{ title }}</title>
+        <meta name="generator" content="{{ eleventy.generator }}">
+        <link rel="icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/assets/styles/index.css">
+        <link rel="alternate"
+              type="application/atom+xml"
+              title="{{ metadata.title }}"
+              href="/feed.xml">
+    </head>
+    <body>
+        {% render "partials/nav.liquid" %}
+        <div class="py-10 px-6 mx-auto max-w-2xl text-left">{{ content }}</div>
+    </body>
+</html>
