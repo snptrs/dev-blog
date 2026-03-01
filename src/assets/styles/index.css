@@ -40,6 +40,36 @@ h6 {
   font-family: var(--font-sans);
 }
 
+.post-content h2 {
+  @apply text-3xl font-bold mt-10 mb-4;
+}
+
+.post-content h3 {
+  @apply text-xl font-bold mt-8 mb-3;
+}
+
+.post-content h4 {
+  @apply text-lg font-bold mt-6 mb-2;
+}
+
+.post-content ul {
+  @apply list-disc pl-6 space-y-2;
+}
+
+.post-content ol {
+  @apply list-decimal pl-6 space-y-2;
+}
+
+.post-content code,
+.callout-body code {
+  @apply bg-white/10 text-accent py-0.5 px-1.5 rounded text-[0.9em];
+}
+
+.post-content pre code,
+.callout-body pre code {
+  @apply bg-transparent text-inherit p-0 rounded-none text-[inherit];
+}
+
 blockquote {
   border-left: 3px solid var(--color-accent);
   padding-left: 1.5rem;
@@ -124,11 +154,20 @@ a.footnote-backref:hover {
   margin-bottom: 0;
 }
 
-.callout strong {
-  color: var(--color-accent);
+.callout-body ol {
+  @apply list-decimal pl-6 space-y-4;
 }
 
-.lightbox {
+.callout-body ol li::marker {
+  @apply font-bold text-accent;
+}
+
+.callout-body ul {
+  @apply list-disc pl-6 space-y-4;
+}
+
+
+.lightbox[open] {
   background: transparent;
   border: none;
   outline: none;

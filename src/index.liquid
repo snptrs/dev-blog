@@ -43,10 +43,7 @@ permalink: "{% if pagination.pageNumber == 0 %}/{% else %}/more-posts/{{ paginat
     {% for post in pagination.items %}
         <article>
             <a href="{{ post.url }}" class="flex gap-6 items-center py-5 group">
-                <div class="flex-shrink-0 w-10 font-sans text-center text-accent">
-                    <div class="text-2xl font-bold leading-none">{{ post.date | date: '%-d' }}</div>
-                    <div class="text-xs tracking-wide uppercase">{{ post.date | date: '%b' }}</div>
-                </div>
+                {% render "partials/post-date.liquid", date: post.date %}
                 <h2 class="flex-grow min-w-0 text-lg font-bold group-hover:text-gray-400 truncate">{{ post.data.title }}</h2>
             </a>
         </article>

@@ -8,7 +8,7 @@ layout: default.liquid
         <p class="font-sans text-sm text-gray-400">{{ page.date | date: '%-d %b %Y' }}</p>
         <hr class="mt-6 w-12 border-gray-600">
     </header>
-    <div class="mt-10 space-y-6 tracking-wide leading-loose prose-links">{{ content }}</div>
+    <div class="mt-10 space-y-6 tracking-wide leading-loose prose-links post-content">{{ content }}</div>
 </article>
 {% render "partials/lightbox.liquid" %}
 {% assign newerPost = collections.posts | getNextCollectionItem %}
