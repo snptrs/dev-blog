@@ -52,7 +52,8 @@ And with that, the Bootcamp is done! Now begins the equally hard work of job hun
 
 ## Links
 
-- [GitHub repo](https://github.com/snptrs/trail-app)
+{% github_repo "https://github.com/snptrs/trail-app", "A trail planning app built as a final bootcamp project." %}
+
 - Production version is live at [trailapp.net](https://trailapp.net/)
 
 {% callout "takeaways" %}

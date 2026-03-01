@@ -33,7 +33,7 @@ The most challenging part was getting the layout working. I had very little expe
 
 It was a really enjoyable project, and one I plan to return to and develop further.
 
-[GitHub - snptrs/news-summary-challenge](https://github.com/snptrs/news-summary-challenge)
+{% github_repo "https://github.com/snptrs/news-summary-challenge", "A frontend news summary app using the Guardian API and OpenAI." %}
 
 {% callout "takeaways" %}
 

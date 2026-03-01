@@ -46,7 +46,7 @@ I tried a few different ways of displaying the output, but I wasn't happy with a
 
 I started by drawing a single frame in ASCIIFlow, then broke that down into [template methods](https://github.com/snptrs/bootcamp-bowling-challenge/blob/main/lib/scorecard.rb#L9). There's some slightly clunky code in there, and if I get a chance to go back and refactor, I'd look at making better use of `map` to re-sort the array elements into the correct order. Overall though, I was surprised and pleased that I managed to get the formatting to work.
 
-[GitHub - snptrs/bootcamp-bowling-challenge](https://github.com/snptrs/bootcamp-bowling-challenge)
+{% github_repo "https://github.com/snptrs/bootcamp-bowling-challenge", "A bowling scorecard program built in Ruby as a terminal app." %}
 
 {% callout "takeaways" %}
 
@@ -57,7 +57,7 @@ I started by drawing a single frame in ASCIIFlow, then broke that down into [tem
 
 {% callout "challenges" %}
 
-- A couple of the methods are in the wrong classes. `.final_score` needs to move from `Gameplay` into `ScoreCard`, for example.
-- Drawing the scorecard could be refactored to make it simpler.
-- Everything is unit tested, but I need to implement more integration testing (particularly for terminal IO).
-  {% endcallout %}
+1. A couple of the methods are in the wrong classes. `.final_score` needs to move from `Gameplay` into `ScoreCard`, for example.
+2. Drawing the scorecard could be refactored to make it simpler.
+3. Everything is unit tested, but I need to implement more integration testing (particularly for terminal IO).
+   {% endcallout %}

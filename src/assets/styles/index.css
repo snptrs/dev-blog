@@ -137,6 +137,19 @@ a.footnote-backref:hover {
   color: var(--color-accent-dark);
 }
 
+.github-repo {
+  background-color: #1e2228;
+}
+
+.prose-links a.github-repo,
+.prose-links a.github-repo:hover {
+  text-decoration: none;
+}
+
+.github-repo:hover {
+  background-color: #252a32;
+}
+
 .callout-green {
   background-color: #2a3d35;
 }

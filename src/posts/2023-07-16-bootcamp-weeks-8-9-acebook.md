@@ -27,7 +27,7 @@ There were lots of interesting technical aspects to this project, but I'm going 
 
 In the basic code that Makers gave us, there was already a JWT token generator and checker implemented as middleware in the Express server. We decided to stick with that as it worked pretty well, and we built our registration and login functions around that.
 
-I'd spent some time learning about authentication for the [Chitter challenge](/2023-06-05-bootcamp-week-4-web-applications/) and I was familiar with how to hash and validate passwords with BCrypt, so I led on implementing most of this functionality.
+I'd spent some time learning about authentication for the [Chitter challenge](/bootcamp-week-4-web-applications/) and I was familiar with how to hash and validate passwords with BCrypt, so I led on implementing most of this functionality.
 
 Although it worked well, we had to debug quite a few issues with tokens not being properly invalidated when they expired, and components not re-rendering properly when a user logged out. For future projects, I'd try to either use a third-party authentication service, or investigate what good libraries are available to handle some of it.
 
@@ -57,7 +57,7 @@ We were really pleased with the end product. It had all the functionality we'd s
 
 The code we produced was clean and well planned, and I'm pretty sure I'll reuse some of it in future projects whenever I need to implement social functionality.
 
-[GitHub - snptrs/bootcamp-acebook](https://github.com/snptrs/bootcamp-acebook)
+{% github_repo "https://github.com/snptrs/bootcamp-acebook", "A social media app built with the MERN stack." %}
 
 {% callout "takeaways" %}
 

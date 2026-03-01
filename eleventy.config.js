@@ -108,6 +108,27 @@ export default function (eleventyConfig) {
     </div>`;
   });
 
+  eleventyConfig.addShortcode("github_repo", function (url, description) {
+    const match = url.match(/github\.com\/([^/]+)\/([^/]+)/);
+    if (!match) {
+      throw new Error(`Invalid GitHub URL: "${url}"`);
+    }
+    const owner = match[1];
+    const repo = match[2];
+    const desc = description
+      ? `<p class="text-gray-300 text-sm mt-1">${description}</p>`
+      : "";
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="github-repo block rounded-lg p-5 my-8 border border-gray-600 hover:border-accent transition-colors">
+      <div class="flex items-center gap-3">
+        <i class="fa-brands fa-github text-2xl text-gray-300 shrink-0"></i>
+        <div>
+          <span class="font-sans font-bold text-accent">${owner}/${repo}</span>
+          ${desc}
+        </div>
+      </div>
+    </a>`;
+  });
+
   eleventyConfig.addPassthroughCopy("src/favicon.ico");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
   eleventyConfig.addPassthroughCopy("src/assets/styles/prism-coldark-dark.css");

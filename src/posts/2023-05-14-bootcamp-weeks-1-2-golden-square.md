@@ -25,11 +25,11 @@ The weekend project at the end of week 2 was to create a takeaway order manageme
 
 ![Screenshot of the Takeaway app showing a menu and options for placing an order](/assets/images/posts/week-2-takeaway-project-screenshot.png)
 
-I used the `[colorize](https://github.com/fazibear/colorize)` gem to make the terminal output a bit nicer. For sending the SMS confirmation, I used Twilio. It was really easy to set up an account, and the API is free for testing purposes (you have to pre-define recipient phone numbers, which was fine for this project). There's an official `[twilio-ruby](https://github.com/twilio/twilio-ruby)` gem which I used to handle the API interaction.
+I used the [colorize](https://github.com/fazibear/colorize) gem to make the terminal output a bit nicer. For sending the SMS confirmation, I used Twilio. It was really easy to set up an account, and the API is free for testing purposes (you have to pre-define recipient phone numbers, which was fine for this project). There's an official [twilio-ruby](https://github.com/twilio/twilio-ruby) gem which I used to handle the API interaction.
 
 It's a really simple application, but I was quite surprised by how much I've already learnt, and was really excited when I received my first order confirmation text message.
 
-[GitHub - snptrs/gs-solo-project](https://github.com/snptrs/gs-solo-project)
+{% github_repo "https://github.com/snptrs/gs-solo-project", "A terminal-based takeaway ordering app built in Ruby with Twilio SMS integration." %}
 
 {% callout "takeaways" %}
 
