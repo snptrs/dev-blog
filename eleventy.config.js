@@ -1,6 +1,6 @@
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import fontAwesomePlugin from "@11ty/font-awesome";
-import pluginRss from "@11ty/eleventy-plugin-rss";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import tailwindcss from "@tailwindcss/postcss";
 import { execSync } from "child_process";
@@ -17,7 +17,23 @@ export default function (eleventyConfig) {
       height: "1.25em",
     },
   });
-  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(feedPlugin, {
+    type: "atom",
+    outputPath: "/feed.xml",
+    collection: {
+      name: "posts",
+      limit: 0,
+    },
+    metadata: {
+      language: "en",
+      title: "Sean Peters",
+      subtitle: "Software development blog by Sean Peters",
+      base: "https://snptrs.dev/",
+      author: {
+        name: "Sean Peters",
+      },
+    },
+  });
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["webp", "png", "jpeg"],
@@ -29,12 +45,6 @@ export default function (eleventyConfig) {
       },
     },
   });
-  eleventyConfig.addLiquidFilter("dateToRfc3339", pluginRss.dateToRfc3339);
-  eleventyConfig.addLiquidFilter(
-    "getNewestCollectionItemDate",
-    pluginRss.getNewestCollectionItemDate,
-  );
-
   eleventyConfig.addCollection("featured", (collectionApi) => {
     return collectionApi
       .getFilteredByTag("posts")
