@@ -1,5 +1,4 @@
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
-import { HtmlBasePlugin } from "@11ty/eleventy";
 import fontAwesomePlugin from "@11ty/font-awesome";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
@@ -13,9 +12,6 @@ import shortcodesPlugin from "./config/shortcodes.js";
 import postcss from "postcss";
 
 export default function (eleventyConfig) {
-  const siteUrl = process.env.SITE_URL || "https://snptrs.dev";
-  const normalizedSiteUrl = siteUrl.endsWith("/") ? siteUrl : `${siteUrl}/`;
-
   eleventyConfig.addPlugin(fontAwesomePlugin, {
     defaultAttributes: {
       width: "1.25em",
@@ -33,7 +29,7 @@ export default function (eleventyConfig) {
       language: "en",
       title: "Sean Peters",
       subtitle: "Software development blog by Sean Peters",
-      base: normalizedSiteUrl,
+      base: "https://snptrs.dev/",
       author: {
         name: "Sean Peters",
       },
@@ -50,7 +46,6 @@ export default function (eleventyConfig) {
       },
     },
   });
-  eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addCollection("featured", (collectionApi) => {
     return collectionApi
       .getFilteredByTag("posts")
@@ -105,7 +100,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/styles/prism-coldark-dark.css");
 
   return {
-    pathPrefix: "/",
     dir: { input: "src", output: "_site" },
   };
 }

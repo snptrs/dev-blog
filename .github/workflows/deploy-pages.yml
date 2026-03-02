@@ -29,22 +29,13 @@ jobs:
           cache: npm
 
       - name: Configure GitHub Pages
-        id: pages
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build site
-        env:
-          SITE_URL: ${{ steps.pages.outputs.origin }}
-          PATH_PREFIX: ${{ steps.pages.outputs.base_path }}
-        run: |
-          if [ -n "$PATH_PREFIX" ]; then
-            npm run build -- --pathprefix "$PATH_PREFIX"
-          else
-            npm run build
-          fi
+        run: npm run build
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
