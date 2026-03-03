@@ -158,6 +158,10 @@ a.footnote-backref:hover {
   background-color: #352a45;
 }
 
+.callout-blue {
+  background-color: #2c3549;
+}
+
 .callout-body p {
   margin-bottom: 1.25rem;
   line-height: 1.75;
@@ -178,7 +182,6 @@ a.footnote-backref:hover {
 .callout-body ul {
   @apply list-disc pl-6 space-y-4;
 }
-
 
 .lightbox[open] {
   background: transparent;

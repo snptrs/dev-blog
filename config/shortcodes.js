@@ -11,6 +11,11 @@ export default function (eleventyConfig) {
       title: "Biggest challenges",
       color: "callout-purple",
     },
+    tips: {
+      icon: "🚀",
+      title: "Tip",
+      color: "callout-blue",
+    },
   };
 
   eleventyConfig.addPairedShortcode("callout", function (content, type) {
