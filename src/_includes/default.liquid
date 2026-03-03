@@ -13,7 +13,11 @@
     </head>
     <body>
         {% render "partials/nav.liquid" %}
-        <div class="py-10 px-6 mx-auto max-w-2xl text-left">{{ content }}</div>
+        {% if fullWidth %}
+            {{ content }}
+        {% else %}
+            <div class="py-10 px-6 mx-auto max-w-2xl text-left">{{ content }}</div>
+        {% endif %}
         {% getBundle "fontawesome" %}
     </body>
 </html>
