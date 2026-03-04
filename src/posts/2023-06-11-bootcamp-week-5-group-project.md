@@ -38,16 +38,16 @@ Given slightly more time, the next steps would have been to improve the design, 
 
 Overall, we were really pleased with [the final product](https://github.com/snptrs/bootcamp-makersbnb) and learnt a lot about effective ways of working together on projects like this.
 
-{% callout "takeaways" %}
+{{ callout "takeaways" }}
 
 1. Regular standups and retros are massively useful for aligning with the rest of the team and helping each other overcome any obstacles. At first it seemed like a lot of time to take out of each day, but it paid dividends and meant we were all really clear about what we should be working on.
 
 2. Although we all had slightly different visions of what the end product should be, we were happy to compromise and make sure that everyone got to contribute equally. We ended the week as a happy team and would all be keen to work together again.
 
 3. It was important to be realistic about what we could achieve in the time available. We decided on the first day that we would focus on creating a good MVP with all the basic requirements, and add bells-and-whistles after that was done. That turned out to be the right approach, as we ended up being really pushed for time to even get the MVP completed.
-   {% endcallout %}
+   {{ /callout }}
 
-{% callout "challenges" %}
+{{ callout "challenges" }}
 
 1. Creating tasks that are clear, specific and achievable within a sprint is key to success, and also really difficult. We oscilated between having tasks that were too broad that ended up taking all week, and tasks that were so small and specific that we could finish them within half an hour.
-   {% endcallout %}
+   {{ /callout }}

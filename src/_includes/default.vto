@@ -12,12 +12,12 @@
               href="/feed.xml">
     </head>
     <body>
-        {% render "partials/nav.liquid" %}
-        {% if fullWidth %}
+        {{ include "partials/nav.vto" }}
+        {{ if fullWidth }}
             {{ content }}
-        {% else %}
+        {{ else }}
             <div class="py-10 px-6 mx-auto max-w-2xl text-left">{{ content }}</div>
-        {% endif %}
-        {% getBundle "fontawesome" %}
+        {{ /if }}
+        {{ getBundle "fontawesome" }}
     </body>
 </html>

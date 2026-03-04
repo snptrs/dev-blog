@@ -46,18 +46,18 @@ I tried a few different ways of displaying the output, but I wasn't happy with a
 
 I started by drawing a single frame in ASCIIFlow, then broke that down into [template methods](https://github.com/snptrs/bootcamp-bowling-challenge/blob/main/lib/scorecard.rb#L9). There's some slightly clunky code in there, and if I get a chance to go back and refactor, I'd look at making better use of `map` to re-sort the array elements into the correct order. Overall though, I was surprised and pleased that I managed to get the formatting to work.
 
-{% github_repo "https://github.com/snptrs/bootcamp-bowling-challenge", "A bowling scorecard program built in Ruby as a terminal app." %}
+{{ github_repo "https://github.com/snptrs/bootcamp-bowling-challenge", "A bowling scorecard program built in Ruby as a terminal app." }}
 
-{% callout "takeaways" %}
+{{ callout "takeaways" }}
 
 1. Taking the time to properly learn how bowling scoring works before I started planning the application paid dividends. If I'd started coding before I understood the logic, I know I'd have ended up needing to scrap the code and start again.
 
 2. This is one of the first projects I've done where I've truly understood the benefits of object-oriented programming. Being able to call methods like `.frame_score` from within the frame is such a neat and efficient way of approaching things.
-   {% endcallout %}
+   {{ /callout }}
 
-{% callout "challenges" %}
+{{ callout "challenges" }}
 
 1. A couple of the methods are in the wrong classes. `.final_score` needs to move from `Gameplay` into `ScoreCard`, for example.
 2. Drawing the scorecard could be refactored to make it simpler.
 3. Everything is unit tested, but I need to implement more integration testing (particularly for terminal IO).
-   {% endcallout %}
+   {{ /callout }}

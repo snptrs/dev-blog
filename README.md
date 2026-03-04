@@ -17,12 +17,11 @@ Requires Node.js 20+.
 ```
 src/
 ├── _data/
-│   └── metadata.json        # Global site metadata (title, URL, author)
+│   └── metadata.json         # Global site metadata (title, URL, author)
 ├── _includes/
-│   ├── partials/             # Reusable Liquid partials (nav, pagination, etc.)
-│   ├── default.liquid        # Base HTML layout
-│   ├── home.liquid           # Homepage layout
-│   └── post.liquid           # Blog post layout (extends default)
+│   ├── partials/             # Reusable Vento partials (nav, pagination, etc.)
+│   ├── default.vto           # Base HTML layout
+│   └── post.vto              # Blog post layout
 ├── assets/
 │   ├── fonts/                # Self-hosted Fira Sans (light, regular, bold)
 │   ├── images/               # Post images and site assets
@@ -31,11 +30,11 @@ src/
 │       └── prism-coldark-dark.css  # Syntax highlighting theme
 ├── posts/                    # Blog posts (Markdown)
 │   └── posts.json            # Directory data file (sets layout, tags, permalink)
-├── index.liquid              # Homepage (paginated post list + featured posts)
-├── search.liquid             # Search page (Pagefind UI)
-├── tags.liquid               # Individual tag pages (paginated by collection)
-├── tag-list.liquid           # Tag index page
-└── 404.liquid
+├── index.vto                 # Homepage (paginated post list + featured posts)
+├── search.vto                # Search page (Pagefind UI)
+├── tags.vto                  # Individual tag pages (paginated by collection)
+├── tag-list.vto              # Tag index page
+└── 404.vto
 config/
 ├── markdown.js               # Markdown-it config (typographer, footnotes)
 └── shortcodes.js             # Custom shortcodes (callout, github_repo)
@@ -50,13 +49,14 @@ eleventy.config.js            # Main Eleventy configuration
 | **[@11ty/eleventy-plugin-rss](https://www.11ty.dev/docs/plugins/rss/)**                         | RSS feed at `/feed.xml` from the `posts` collection.                                                                                                         |
 | **[@11ty/eleventy-plugin-syntaxhighlight](https://www.11ty.dev/docs/plugins/syntaxhighlight/)** | Prism.js syntax highlighting for fenced code blocks. Uses the Coldark Dark theme. Default config.                                                            |
 | **[@11ty/font-awesome](https://github.com/11ty/font-awesome)**                                  | Font Awesome icons (SVG). Default icon size set to `1.25em × 1.25em`.                                                                                        |
+| **[eleventy-plugin-vento](https://www.npmjs.com/package/eleventy-plugin-vento)**               | Adds Vento template support across `.vto` templates and Markdown/data templating.                                                                            |
 | **[markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)**                 | Footnote support in Markdown (configured in `config/markdown.js`). The Markdown-it library also has `typographer: true` enabled for smart quotes and dashes. |
 
 ## Posts
 
 Posts are Markdown files in `src/posts/`, named with a date prefix: `YYYY-MM-DD-slug.md`.
 
-The directory data file (`posts.json`) automatically applies the `post.liquid` layout, adds the `posts` tag, and generates a permalink from the file slug (e.g., `/improving-my-git-workflow/`).
+The directory data file (`posts.json`) automatically applies the `post.vto` layout, adds the `posts` tag, and generates a permalink from the file slug (e.g., `/improving-my-git-workflow/`).
 
 ### Front matter
 
@@ -90,26 +90,26 @@ Defined in `config/shortcodes.js`.
 
 ### Callout
 
-A styled callout box. Available types: `takeaways` (💡 green) and `challenges` (🤔 purple). Content is parsed as Markdown.
+A styled callout box. Available types: `takeaways` (💡 green), `challenges` (🤔 purple), and `tips` (🚀 blue). Content is parsed as Markdown.
 
-```liquid
-{% callout "takeaways" %}
+```vento
+{{ callout "takeaways" }}
 - First point
 - Second point
-{% endcallout %}
+{{ /callout }}
 
-{% callout "challenges" %}
+{{ callout "challenges" }}
 The trickiest part was...
-{% endcallout %}
+{{ /callout }}
 ```
 
 ### GitHub repo
 
 An inline link card for a GitHub repository. Accepts a GitHub URL and an optional description.
 
-```liquid
-{% github_repo "https://github.com/owner/repo" "A short description of the repo" %}
-{% github_repo "https://github.com/owner/repo" %}
+```vento
+{{ github_repo "https://github.com/owner/repo", "A short description of the repo" }}
+{{ github_repo "https://github.com/owner/repo" }}
 ```
 
 ## CSS pipeline
