@@ -65,7 +65,7 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["webp", "png", "jpeg"],
+    formats: ["webp", "png", "jpeg", "avif"],
     widths: ["auto"],
     outputDir: ".cache/@11ty/img/",
     urlPath: "/img/built/",
