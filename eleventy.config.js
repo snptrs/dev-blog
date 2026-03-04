@@ -67,6 +67,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["webp", "png", "jpeg"],
     widths: ["auto"],
+    outputDir: ".cache/@11ty/img/",
+    urlPath: "/img/built/",
     htmlOptions: {
       imgAttributes: {
         loading: "lazy",
@@ -104,6 +106,12 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.on("eleventy.after", () => {
+    fs.cpSync(
+      ".cache/@11ty/img/",
+      path.join(eleventyConfig.directories.output, "/img/built/"),
+      { recursive: true },
+    );
+
     execSync(`npx pagefind --site _site --glob "**/*.html"`, {
       encoding: "utf-8",
     });

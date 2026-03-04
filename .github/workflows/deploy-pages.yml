@@ -34,31 +34,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - uses: actions/cache/restore@v4
-        id: cache
+      - name: Restore cache
+        uses: actions/cache/restore@v4
         with:
-          path: |
-            .cache
-            ./img
+          path: .cache
           key: 11ty-v2-${{ runner.os }}-${{ github.run_id }}
           restore-keys: |
             11ty-v2-${{ runner.os }}
-            ${{ runner.os }}-11ty-v2
 
       - name: Build site
         run: npm run build
+
+      - name: Save cache
+        uses: actions/cache/save@v4
+        with:
+          path: .cache
+          key: 11ty-v2-${{ runner.os }}-${{ github.run_id }}
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
-      - uses: actions/cache/save@v4
-        with:
-          path: |
-            .cache
-            ./img
-          key: 11ty-v2-${{ runner.os }}-${{ github.run_id }}
 
   deploy:
     environment:
