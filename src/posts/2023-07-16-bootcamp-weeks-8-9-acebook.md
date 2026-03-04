@@ -57,18 +57,18 @@ We were really pleased with the end product. It had all the functionality we'd s
 
 The code we produced was clean and well planned, and I'm pretty sure I'll reuse some of it in future projects whenever I need to implement social functionality.
 
-{% github_repo "https://github.com/snptrs/bootcamp-acebook", "A social media app built with the MERN stack." %}
+{{ github_repo "https://github.com/snptrs/bootcamp-acebook", "A social media app built with the MERN stack." }}
 
-{% callout "takeaways" %}
+{{ callout "takeaways" }}
 
 1. MongoDB is great! It just worked seamlessly and fits so logically into a JS app like this. I found myself evangelising about it to anyone who would listen.
 
 2. I need to spend a bit of time investigating options for hosting images. Once we started to dive into it, there was so many potentail solutions it was a bit overwhelming. Having a couple of go-to options in my back pocket would be useful for when I next work on a project that needs robust image processing and hosting.
 
 3. We had really clear goals for which features we wanted to implement, and we stuck pretty rigidly to our Trello tickets. If we hadn't been so organised, we definitely wouldn't have finished all the features on time.
-   {% endcallout %}
+   {{ /callout }}
 
-{% callout "challenges" %}
+{{ callout "challenges" }}
 
 1. Learning enough React to be able to build this application in less than two weeks was challenging. But taking a couple of days at the start of the project to try and learn as much about it as we could definitely paid dividends later on. (I've subsequently done a Frontend Masters React course which was brilliant, and I'm now pretty comfortable with it.)
-   {% endcallout %}
+   {{ /callout }}

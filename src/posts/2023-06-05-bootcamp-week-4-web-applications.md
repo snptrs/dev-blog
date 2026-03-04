@@ -36,16 +36,16 @@ I used Mailgun to send notifications, and wrote a very (very) basic method to ma
 
 I was really pleased with the [final product](https://github.com/snptrs/bootcamp-chitter-project). I even added a proper README with deploy instructions. I can’t imagine anyone would want to use this (slightly clunky and fairly flaky) app, but it’s there if anyone wants it!
 
-{% callout "takeaways" %}
+{{ callout "takeaways" }}
 
 1. I learnt a lot from the Chitter project about encrypting and validating passwords, managing user sessions and sending transactional emails. `bcrypt` is amazing!
 
 2. Plan, plan, plan! I produced a lot of code this week, and with the number of different challenges and projects there were to juggle, it would have got really confusing if I hadn’t planned effectively. I’ve realised that spending lots of time of designing database schemas and application classes pays dividends further down the line.
 
 3. I had a bit of an epiphany this week about test-driven development. Up to now, I've felt like it was a bit of a pain to have to keep writing tests before I actually produce any code. But it all seemed to click into place this week, and I’ve realised it actually speeds up the development process (and saves time debugging) if you just put in the effort up front to write good tests.
-   {% endcallout %}
+   {{ /callout }}
 
-{% callout "challenges" %}
+{{ callout "challenges" }}
 
 1.  I'm not doing a great job of tracking learning objectives (or updating my [TIL](https://github.com/snptrs/til)). I need to try and set aside some time every day to reflect on what I've learnt.
-    {% endcallout %}
+    {{ /callout }}

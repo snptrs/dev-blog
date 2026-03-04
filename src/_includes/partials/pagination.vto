@@ -1,16 +1,16 @@
-{% if pagination.href.previous or pagination.href.next %}
+{{ if pagination.href.previous || pagination.href.next }}
     <nav class="flex justify-between items-center pt-10 pb-4 font-sans text-base">
-        {% if pagination.href.previous %}
+        {{ if pagination.href.previous }}
             <a href="{{ pagination.href.previous }}"
                class="text-gray-400 hover:text-gray-200">&larr; Newer posts</a>
-        {% else %}
+        {{ else }}
             <span></span>
-        {% endif %}
-        {% if pagination.href.next %}
+        {{ /if }}
+        {{ if pagination.href.next }}
             <a href="{{ pagination.href.next }}"
                class="text-gray-400 hover:text-gray-200">Older posts &rarr;</a>
-        {% else %}
+        {{ else }}
             <span></span>
-        {% endif %}
+        {{ /if }}
     </nav>
-{% endif %}
+{{ /if }}

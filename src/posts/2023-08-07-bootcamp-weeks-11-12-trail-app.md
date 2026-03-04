@@ -52,19 +52,19 @@ And with that, the Bootcamp is done! Now begins the equally hard work of job hun
 
 ## Links
 
-{% github_repo "https://github.com/snptrs/trail-app", "A trail planning app built as a final bootcamp project." %}
+{{ github_repo "https://github.com/snptrs/trail-app", "A trail planning app built as a final bootcamp project." }}
 
 - Production version is live at [trailapp.net](https://trailapp.net/)
 
-{% callout "takeaways" %}
+{{ callout "takeaways" }}
 
 1. Having a really clear vision about the app's purpose was useful for keeping us on track. Whenever we felt a bit directionless or couldn't decide whether to add a new feature, being able to return to our mission statement about what the app should be doing always helped get us going in the right direction again.
 2. This isn't really news to anyone, but this project reaffirmed to me that having clear, achievable tickets and rigorously managing the Trello board is absolutely key to not losing direction or momentum. Once we figured out a prioritisation method that we were all happy with, managing out workflow became a much easier.
-   {% endcallout %}
+   {{ /callout }}
 
-{% callout "challenges" %}
+{{ callout "challenges" }}
 
 1. Every API that we wanted to use worked in a completely different way, and even figuring out the basics of how to authenticate with each of them was quite time-consuming. Even APIs from the same provider can be completely different (we used totally different authentication methods for Google's Places and TTS APIs, for example). In future, I'll make sure I prioritise learning how particular APIs work right at the start of the project; it'll save a lot of headaches further down the line.
 2. ChatGPT can't be relied on to generate accurate descriptions. We knew this before we started – it's designed to sound convincing, not to be accurate. But I think we were all surprised but just how convincingly it makes up complete nonsense. I found myself saying "Wow, I never knew that thing near my house had such an interesting history," only to discover that it was completely made up. I'm currently testing some different AI models to see if any of them are better are dealing with real-world locations.
 3. Writing Cypress tests proved quite difficult for the components that query the user's location. I need to do some more research into better ways of mocking geodata, or figure out how to get Cypress to play nicer with the browser's location services.
-   {% endcallout %}
+   {{ /callout }}
