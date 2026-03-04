@@ -35,15 +35,15 @@ jobs:
         run: npm ci
 
       - uses: actions/cache/restore@v4
-      id: cache
-      with:
-        path: |
-          .cache
-          ./img
-        key: 11ty-v2-${{ runner.os }}-${{ github.run_id }}
-        restore-keys: |
-          11ty-v2-${{ runner.os }}
-          ${{ runner.os }}-11ty-v2
+        id: cache
+        with:
+          path: |
+            .cache
+            ./img
+          key: 11ty-v2-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            11ty-v2-${{ runner.os }}
+            ${{ runner.os }}-11ty-v2
 
       - name: Build site
         run: npm run build
