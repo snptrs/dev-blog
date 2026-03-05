@@ -66,6 +66,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["svg", "avif", "webp", "png", "jpeg"],
+    svgShortCircuit: "size",
     widths: ["auto"],
     outputDir: ".cache/@11ty/img/",
     urlPath: "/img/built/",
