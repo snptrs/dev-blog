@@ -38,9 +38,9 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .cache
-          key: 11ty-v2-${{ runner.os }}-${{ github.run_id }}
+          key: 11ty-${{ runner.os }}-${{ github.run_id }}
           restore-keys: |
-            11ty-v2-${{ runner.os }}
+            11ty-${{ runner.os }}-
 
       - name: Build site
         run: npm run build
@@ -49,7 +49,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .cache
-          key: 11ty-v2-${{ runner.os }}-${{ github.run_id }}
+          key: 11ty-${{ runner.os }}-${{ github.run_id }}
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
