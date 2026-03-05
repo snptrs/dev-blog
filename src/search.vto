@@ -6,27 +6,29 @@ permalink: /search/
 
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 <style>
-    :root {
-        --pagefind-ui-primary: var(--color-gray-200);
-        --pagefind-ui-text: var(--color-gray-200);
-        --pagefind-ui-background: transparent;
-        --pagefind-ui-border: var(--color-gray-600);
-        --pagefind-ui-tag: var(--color-gray-600);
-        --pagefind-ui-scale: 1.1;
-        --pagefind-ui-font: var(--font-sans);
-    }
+  :root {
+    --pagefind-ui-primary: var(--color-gray-200);
+    --pagefind-ui-text: var(--color-gray-200);
+    --pagefind-ui-background: transparent;
+    --pagefind-ui-border: var(--color-gray-600);
+    --pagefind-ui-tag: var(--color-gray-600);
+    --pagefind-ui-scale: 1.1;
+    --pagefind-ui-font: var(--font-sans);
+  }
 
-    .pagefind-ui__result-link {
-        color: var(--color-accent);
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-        text-underline-offset: 3px;
-    }
+  .pagefind-ui__result-link {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
 
-    .pagefind-ui__result-link:hover {
-        color: var(--color-accent-dark);
-    }
+  .pagefind-ui__result-link:hover {
+    color: var(--color-accent-dark);
+  }
 </style>
 <div id="search"></div>
-<script src="/pagefind/pagefind-ui.js"
-        onload="new PagefindUI({ element: '#search', showImages: false });"></script>
+<script
+  src="/pagefind/pagefind-ui.js"
+  onload="new PagefindUI({ element: '#search', showImages: false });"
+></script>

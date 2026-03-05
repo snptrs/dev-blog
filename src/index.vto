@@ -10,47 +10,61 @@ permalink: "{{ pagination.pageNumber === 0 ? '/' : `/more-posts/${pagination.pag
 ---
 
 {{ if pagination.pageNumber === 0 }}
-    <section class="flex flex-col items-center pt-10 pb-16">
-        <img src="/assets/images/profile-photo.jpeg"
-             alt="Sean Peters"
-             eleventy:widths="320"
-             class="mb-5 w-32 h-32 rounded-full">
-        <p class="text-gray-300">Hi 👋 I'm Sean. I'm a software developer.</p>
+  <section class="flex flex-col items-center pt-10 pb-16">
+    <img
+      src="/assets/images/profile-photo.jpeg"
+      alt="Sean Peters"
+      eleventy:widths="320"
+      class="mb-5 w-32 h-32 rounded-full"
+    >
+    <p class="text-gray-300">Hi 👋 I'm Sean. I'm a software developer.</p>
+  </section>
+  {{ set featured = collections.featured }}
+  {{ if featured.length > 0 }}
+    <section class="px-6 pb-12 mx-auto max-w-5xl">
+      <h2
+        class="font-sans text-xs font-bold tracking-widest text-gray-400 uppercase"
+      >
+        Featured posts
+      </h2>
+      <hr class="mt-3 mb-8 border-gray-600">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {{ for post of featured }}
+          <a href="{{ post.url }}" class="group">
+            {{ if post.data.coverImage }}
+              <div class="overflow-hidden mb-4 rounded-lg aspect-video">
+                <img
+                  src="{{ post.data.coverImage }}"
+                  alt="{{ post.data.title }}"
+                  eleventy:widths="400,750"
+                  class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                >
+              </div>
+            {{ /if }}
+            <h3 class="font-sans text-lg font-bold group-hover:text-gray-400">
+              {{ post.data.title }}
+            </h3>
+          </a>
+        {{ /for }}
+      </div>
     </section>
-    {{ set featured = collections.featured }}
-    {{ if featured.length > 0 }}
-        <section class="px-6 pb-12 mx-auto max-w-5xl">
-            <h2 class="font-sans text-xs font-bold tracking-widest text-gray-400 uppercase">Featured posts</h2>
-            <hr class="mt-3 mb-8 border-gray-600">
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-                {{ for post of featured }}
-                    <a href="{{ post.url }}" class="group">
-                        {{ if post.data.coverImage }}
-                            <div class="overflow-hidden mb-4 rounded-lg aspect-video">
-                                <img src="{{ post.data.coverImage }}"
-                                     alt="{{ post.data.title }}"
-                                     eleventy:widths="400,750"
-                                     class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
-                            </div>
-                        {{ /if }}
-                        <h3 class="font-sans text-lg font-bold group-hover:text-gray-400">{{ post.data.title }}</h3>
-                    </a>
-                {{ /for }}
-            </div>
-        </section>
-    {{ /if }}
+  {{ /if }}
 {{ /if }}
 <div class="py-10 px-6 mx-auto max-w-2xl">
-    {{ for index, post of pagination.items }}
-        <article>
-            <a href="{{ post.url }}" class="flex gap-6 items-center py-5 group">
-                {{ include "partials/post-date.vto" { date: post.date } }}
-                <h2 class="flex-grow min-w-0 text-lg font-bold group-hover:text-gray-400 truncate">{{ post.data.title }}</h2>
-            </a>
-        </article>
-        {{ if index < pagination.items.length - 1 }}
-            <hr class="border-gray-700">
-        {{ /if }}
-    {{ /for }}
-    {{ include "partials/pagination.vto" { pagination } }}
+  {{ for index, post of pagination.items }}
+    <article>
+      <a href="{{ post.url }}" class="flex gap-6 items-center py-5 group">
+        {{ include "partials/post-date.vto" { date: post.date } }}
+        <h2
+          class="flex-grow min-w-0 text-lg font-bold group-hover:text-gray-400 truncate"
+        >
+          {{ post.data.title }}
+        </h2>
+      </a>
+    </article>
+    {{ if index < pagination.items.length - 1 }}
+      <hr class="border-gray-700">
+    {{ /if }}
+  {{ /for }}
+  {{ include "partials/pagination.vto" { pagination } }}
 </div>

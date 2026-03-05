@@ -5,22 +5,28 @@ permalink: /tags/
 ---
 
 <div class="py-10 px-6 mx-auto max-w-2xl">
-    <h1 class="mb-8 font-sans text-3xl font-bold">Tags</h1>
-    {{ for tagName, posts of collections }}
-        {{ if tagName !== "all" && tagName !== "posts" && tagName !== "featured" }}
-            <article>
-                <a href="/tags/{{ tagName }}/"
-                   class="flex gap-6 items-center py-5 border-b border-gray-700 last:border-0 group">
-                    <h2 class="min-w-0 text-lg font-bold group-hover:text-gray-400 grow truncate">{{ tagName |> capitalize }}</h2>
-                    <span class="text-sm text-gray-400 shrink-0">{{ posts.length }}
-                        {{ if posts.length === 1 }}
-                        post
-                        {{ else }}
-                        posts
-                        {{ /if }}
-                    </span>
-                </a>
-            </article>
-        {{ /if }}
-    {{ /for }}
+  <h1 class="mb-8 font-sans text-3xl font-bold">Tags</h1>
+  {{ for tagName, posts of collections }}
+    {{ if tagName !== "all" && tagName !== "posts" && tagName !== "featured" }}
+      <article>
+        <a
+          href="/tags/{{ tagName }}/"
+          class="flex gap-6 items-center py-5 border-b border-gray-700 last:border-0 group"
+        >
+          <h2
+            class="min-w-0 text-lg font-bold group-hover:text-gray-400 grow truncate"
+          >
+            {{ tagName |> capitalize }}
+          </h2>
+          <span class="text-sm text-gray-400 shrink-0">{{ posts.length }}
+            {{ if posts.length === 1 }}
+              post
+            {{ else }}
+              posts
+            {{ /if }}
+          </span>
+        </a>
+      </article>
+    {{ /if }}
+  {{ /for }}
 </div>
