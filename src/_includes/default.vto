@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="p-0 text-xl text-gray-200 bg-bg">
   <head>
-    <title>{{ title }}</title>
+    <title>
+      {{ if title }}{{ title }} – {{ metadata.title }}{{ else }}{{
+          metadata.title
+        }}{{ /if }}
+    </title>
     <meta name="generator" content="{{ eleventy.generator }}">
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/assets/styles/index.css">

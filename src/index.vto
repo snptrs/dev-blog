@@ -1,5 +1,4 @@
 ---
-title: Sean Peters
 layout: default.vto
 fullWidth: true
 pagination:
@@ -13,7 +12,7 @@ permalink: "{{ pagination.pageNumber === 0 ? '/' : `/more-posts/${pagination.pag
   <section class="flex flex-col items-center pt-10 pb-16">
     <img
       src="/assets/images/profile-photo.jpeg"
-      alt="Sean Peters"
+      alt="{{ metadata.author }}"
       eleventy:widths="320"
       class="mb-5 w-32 h-32 rounded-full"
     >
