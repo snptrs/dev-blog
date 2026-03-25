@@ -1,19 +1,6 @@
 {{ define "main" }}
 <div class="py-10 px-6 mx-auto max-w-2xl">
-  <h1 class="mb-8 font-sans text-3xl font-bold">{{ .Title }}</h1>
-  {{ $pages := .Pages.ByDate.Reverse }} {{ range $index, $post := $pages }}
-  <article>
-    <a href="{{ .RelPermalink }}" class="flex gap-6 items-center py-5 group">
-      {{ partial "post-date.html" .Date }}
-      <h2
-        class="min-w-0 text-lg font-bold group-hover:text-gray-400 grow truncate"
-      >
-        {{ .Title }}
-      </h2>
-    </a>
-  </article>
-  {{ if ne $index (sub (len $pages) 1) }}
-  <hr class="border-gray-700" />
-  {{ end }} {{ end }}
+    <h1 class="mb-8 font-sans text-3xl font-bold">{{ .Title }}</h1>
+    {{ partial "post-list.html" .Pages.ByDate.Reverse }}
 </div>
 {{ end }}

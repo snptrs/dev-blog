@@ -1,7 +1,8 @@
 baseURL = "https://snptrs.dev/"
 title = "Sean Peters"
 languageCode = "en"
-paginate = 15
+[pagination]
+pagerSize = 15
 
 [taxonomies]
 tag = "tags"
@@ -52,3 +53,4 @@ resampleFilter = "lanczos"
 
 [params]
 author = "Sean Peters"
+profilePhoto = "images/profile-photo.jpeg"

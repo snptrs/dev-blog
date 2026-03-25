@@ -2,37 +2,8 @@
 {{- $alt := .PlainText -}}
 {{- $path := strings.TrimPrefix "/assets/" $src -}}
 {{- $img := resources.Get $path -}}
-{{- with $img -}}
-  {{- $original1x := .Resize "720x" -}}
-  {{- $webp1x := .Resize "720x webp" -}}
-  {{- if ge .Width 1440 -}}
-    {{- $original2x := .Resize "1440x" -}}
-    {{- $webp2x := .Resize "1440x webp" -}}
-    <picture>
-      <source srcset="{{ $webp1x.RelPermalink }} 1x, {{ $webp2x.RelPermalink }} 2x" type="image/webp">
-      <img
-        src="{{ $original1x.RelPermalink }}"
-        srcset="{{ $original1x.RelPermalink }} 1x, {{ $original2x.RelPermalink }} 2x"
-        alt="{{ $alt }}"
-        width="{{ $original1x.Width }}"
-        height="{{ $original1x.Height }}"
-        loading="lazy"
-      >
-    </picture>
-  {{- else -}}
-    <picture>
-      <source srcset="{{ $webp1x.RelPermalink }}" type="image/webp">
-      <img
-        src="{{ $original1x.RelPermalink }}"
-        alt="{{ $alt }}"
-        width="{{ $original1x.Width }}"
-        height="{{ $original1x.Height }}"
-        loading="lazy"
-      >
-    </picture>
-  {{- end -}}
+{{- if $img -}}
+  {{ partial "picture.html" (dict "src" $path "alt" $alt) }}
 {{- else -}}
-  <img src="{{ $src | safeURL }}"
-    {{- with $alt }} alt="{{ . }}"{{ end -}}
-  >
+  <img src="{{ $src | safeURL }}"{{- with $alt }} alt="{{ . }}"{{ end -}}>
 {{- end -}}

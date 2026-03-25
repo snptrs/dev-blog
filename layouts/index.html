@@ -2,11 +2,12 @@
 {{ $paginator := .Paginate ($posts.ByDate.Reverse) }} {{ if not
 $paginator.HasPrev }}
 <section class="flex flex-col items-center pt-10 pb-16">
-  {{ partial "picture.html" (dict "src" "images/profile-photo.jpeg" "alt" .Site.Params.author "class" "mb-5 w-32 h-32 rounded-full" "sizes" "256x") }}
+  {{ partial "picture.html" (dict "src" .Site.Params.profilePhoto "alt"
+  .Site.Params.author "class" "mb-5 w-32 h-32 rounded-full" "sizes" "256x") }}
   <p class="text-gray-300">Hi 👋 I'm Sean. I'm a software developer.</p>
 </section>
-{{ $featured := first 3 (sort (where .Site.RegularPages.ByDate.Reverse
-"Params.featured" true) "Date" "desc") }} {{ if $featured }}
+{{ $featured := first 3 (sort (where .Site.RegularPages "Params.featured" true)
+"Date" "desc") }} {{ if $featured }}
 <section class="px-6 pb-12 mx-auto max-w-5xl">
   <h2
     class="font-sans text-xs font-bold tracking-widest text-gray-400 uppercase"
@@ -17,8 +18,8 @@ $paginator.HasPrev }}
   <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
     {{ range $featured }}
     <a href="{{ .RelPermalink }}" class="group">
-      {{ with .Params.coverImage }}
-      {{ $path := strings.TrimPrefix "/assets/" . }}
+      {{ with .Params.coverImage }} {{ $path := strings.TrimPrefix "/assets/" .
+      }}
       <div class="overflow-hidden mb-4 rounded-lg aspect-video">
         {{ partial "picture.html" (dict "src" $path "alt" $.Title "class" "object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" "sizes" "750x") }}
       </div>
