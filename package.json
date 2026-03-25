@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx eleventy",
-    "serve": "npx eleventy --serve"
+    "build": "hugo --minify && npx pagefind --site public --glob \"**/*.html\"",
+    "serve": "hugo server"
   },
   "repository": {
     "type": "git",

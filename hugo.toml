@@ -26,6 +26,10 @@ noClasses = true
 [outputFormats.RSS]
 baseName = "feed"
 
+[outputs]
+home = ["HTML", "RSS"]
+section = ["HTML", "RSS"]
+
 [build]
 [build.buildStats]
 enable = true
