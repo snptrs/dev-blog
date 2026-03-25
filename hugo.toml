@@ -46,5 +46,8 @@ disableWatch = true
 source = "hugo_stats.json"
 target = "assets/notwatching/hugo_stats.json"
 
+[imaging]
+quality = 85
+
 [params]
 author = "Sean Peters"
