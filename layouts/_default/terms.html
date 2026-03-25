@@ -1,0 +1,19 @@
+{{ define "main" }}
+<h1 class="mb-8 font-sans text-3xl font-bold">Tags</h1>
+{{ range .Data.Terms.Alphabetical }}
+<article>
+  <a
+    href="/tags/{{ .Name | urlize }}/"
+    class="flex gap-6 items-center py-5 border-b border-gray-700 last:border-0 group"
+  >
+    <h2
+      class="min-w-0 text-lg font-bold group-hover:text-gray-400 grow truncate"
+    >
+      {{ .Name | humanize | title }}
+    </h2>
+    <span class="text-sm text-gray-400 shrink-0"
+      >{{ .Count }} {{ if eq .Count 1 }} post {{ else }} posts {{ end }}
+    </span>
+  </a>
+</article>
+{{ end }} {{ end }}

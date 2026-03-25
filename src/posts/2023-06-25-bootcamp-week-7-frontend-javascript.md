@@ -33,14 +33,14 @@ The most challenging part was getting the layout working. I had very little expe
 
 It was a really enjoyable project, and one I plan to return to and develop further.
 
-{{ github_repo "https://github.com/snptrs/news-summary-challenge", "A frontend news summary app using the Guardian API and OpenAI." }}
+{{< github_repo url="https://github.com/snptrs/news-summary-challenge" description="A frontend news summary app using the Guardian API and OpenAI." >}}
 
-{{ callout "takeaways" }}
+{{% callout "takeaways" %}}
 
 1. When you're interacting with an API from a frontend app, it's a real pain to manage authentication without accidentally exposing credentials. For the purposes of testing my news summary app, I just passed keys for the Guardian and OpenAI APIs in the query string. If I decided to deploy a production version of this, I'd need to create a simple backend that handled to API calls so I could store the credneitals as environment variables.
-   {{ /callout }}
+   {{% /callout %}}
 
-{{ callout "challenges" }}
+{{% callout "challenges" %}}
 
 1.  I found working with a monorepo much more confusing than I thought I would. Trying to keep track of what was happening in the backend versus the frontend, making sure the right servers and build process were running for each, and catching errors in the relevant consoles was all conceptually quite challenging.
-    {{ /callout }}
+    {{% /callout %}}

@@ -33,12 +33,12 @@ With benefit of hindsight and having now learnt a bit more about JavaScript, if 
 
 Rendering the template server-side with Handelebars was a good learning experience though, and I'm starting to understand the pros and cons of both approaches depending on the type of project now.
 
-{{ callout "takeaways" }}
+{{% callout "takeaways" %}}
 
 1. Jest is similar enough to RSpec that it was pretty easy to get up and running with JavaScript tests. In fact, mocking seems more straightforward in Jest. Even testing interaction with DOM elements was fairly simple. It seems like the most challenging aspect of testing is coming up with tests that actually test the right things; I definitely wrote a few tests this week that weren't testing what I thought they were testing.
-   {{ /callout }}
+   {{% /callout %}}
 
-{{ callout "challenges" }}
+{{% callout "challenges" %}}
 
 1. Some of the basics that are so fundamental to JavaScript are quite tricky to get your head around at first. Asynchronicity is a bit mindblowing when you're used to working in a syncronous language. Even the concept of using callback functions takes a lot of getting used to. It's worthwhile taking the time to really understand these concepts from the outset.
-   {{ /callout }}
+   {{% /callout %}}

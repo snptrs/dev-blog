@@ -1,0 +1,14 @@
+{{ $url := .Get "url" }}
+{{ $parts := split $url "/" }}
+{{ $owner := index $parts 3 }}
+{{ $repo := index $parts 4 }}
+
+<a href="{{ $url }}" target="_blank" rel="noopener noreferrer" class="github-repo block rounded-lg p-5 my-8 border border-gray-600 hover:border-accent transition-colors">
+    <div class="flex items-center gap-3">
+        <i class="fa-brands fa-github text-2xl text-gray-300 shrink-0"></i>
+        <div>
+            <span class="font-sans font-bold text-accent">{{ $owner }}/{{ $repo }}</span>
+            {{ with $.Get "description" }}<p class="text-gray-300 text-sm mt-1">{{ . }}</p>{{ end }}
+        </div>
+    </div>
+</a>

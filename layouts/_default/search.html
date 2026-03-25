@@ -1,10 +1,5 @@
----
-title: Search
-layout: default.vto
-permalink: /search/
----
-
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+{{ define "main" }}
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
 <style>
   :root {
     --pagefind-ui-primary: var(--color-gray-200);
@@ -30,5 +25,6 @@ permalink: /search/
 <div id="search"></div>
 <script
   src="/pagefind/pagefind-ui.js"
-  onload="new PagefindUI({ element: '#search', showImages: false });"
+  onload="new PagefindUI({ element: '#search', showImages: false })"
 ></script>
+{{ end }}

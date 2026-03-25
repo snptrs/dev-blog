@@ -29,16 +29,16 @@ I used the [colorize](https://github.com/fazibear/colorize) gem to make the term
 
 It's a really simple application, but I was quite surprised by how much I've already learnt, and was really excited when I received my first order confirmation text message.
 
-{{ github_repo "https://github.com/snptrs/gs-solo-project", "A terminal-based takeaway ordering app built in Ruby with Twilio SMS integration." }}
+{{< github_repo url="https://github.com/snptrs/gs-solo-project" description="A terminal-based takeaway ordering app built in Ruby with Twilio SMS integration." >}}
 
-{{ callout "takeaways" }}
+{{% callout "takeaways" %}}
 
 1. Spending time planning classes, methods and tests was really worthwhile. I found that once I'd planned everything out properly, it was really quick to write the actual code.
 
 2. I'd initially thought I'd interact with the Twilio API manually, but once I investigated the official gem, it was clear that it was a much more robust solution to just use that. It would've taken ages to write all the error and exception handling methods myself.
-   {{ /callout }}
+   {{% /callout %}}
 
-{{ callout "challenges" }}
+{{% callout "challenges" %}}
 
 1. The second half of the module involved a lot of mocking in RSpec, which I found pretty challenging at first. Actually implementing the mocks and stubs is straightforward, but I found it a difficult concept to get my head around at first. I had to take a step back and read a few blog posts and watch some YouTube videos to try and understand the basics before going back and implementing them myself.
-   {{ /callout }}
+   {{% /callout %}}
