@@ -1,0 +1,39 @@
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $sizes := .sizes | default "720x" -}}
+{{- $img := resources.Get $src -}}
+{{- with $img -}}
+  {{- $width := int (index (split $sizes "x") 0) -}}
+  {{- $width2x := mul $width 2 -}}
+  {{- $original1x := .Resize $sizes -}}
+  {{- $webp1x := .Resize (printf "%s webp" $sizes) -}}
+  {{- if ge .Width $width2x -}}
+    {{- $original2x := .Resize (printf "%dx" $width2x) -}}
+    {{- $webp2x := .Resize (printf "%dx webp" $width2x) -}}
+    <picture>
+      <source srcset="{{ $webp1x.RelPermalink }} 1x, {{ $webp2x.RelPermalink }} 2x" type="image/webp">
+      <img
+        src="{{ $original1x.RelPermalink }}"
+        srcset="{{ $original1x.RelPermalink }} 1x, {{ $original2x.RelPermalink }} 2x"
+        alt="{{ $alt }}"
+        width="{{ $original1x.Width }}"
+        height="{{ $original1x.Height }}"
+        loading="lazy"
+        {{- with $class }} class="{{ . }}"{{ end -}}
+      >
+    </picture>
+  {{- else -}}
+    <picture>
+      <source srcset="{{ $webp1x.RelPermalink }}" type="image/webp">
+      <img
+        src="{{ $original1x.RelPermalink }}"
+        alt="{{ $alt }}"
+        width="{{ $original1x.Width }}"
+        height="{{ $original1x.Height }}"
+        loading="lazy"
+        {{- with $class }} class="{{ . }}"{{ end -}}
+      >
+    </picture>
+  {{- end -}}
+{{- end -}}
