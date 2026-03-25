@@ -1,7 +1,7 @@
 ---
 title: "Bootcamp weeks 1 and 2: Golden Square"
 date: 2023-05-14
-tags: bootcamp
+tags: ["bootcamp"]
 summary: Now we’ve completed the first four weeks of introductory content, the bootcamp got properly underway with the ‘Golden Square’.
 ---
 

@@ -2,7 +2,7 @@
 title: "Bowling challenge"
 date: 2023-06-12
 featured: true
-tags: bootcamp
+tags: ["bootcamp"]
 coverImage: /assets/images/posts/photo-1545056453-f0359c3df6db.jpg
 summary: The final challenge for week five was to create a bowling scorecard program. Conceptually, this was the most difficult project so far and it required a lot of research and planning.
 ---

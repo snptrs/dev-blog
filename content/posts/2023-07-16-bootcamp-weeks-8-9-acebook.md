@@ -1,7 +1,7 @@
 ---
 title: "Bootcamp weeks 8 and 9: Acebook"
 date: 2023-07-16
-tags: bootcamp
+tags: ["bootcamp"]
 summary: Time for another group project! I was in a team with Arbnor, Heather, Jessica, Khuslen, Osman and Shoaib.
 ---
 

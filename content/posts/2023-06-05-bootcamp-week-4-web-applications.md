@@ -1,7 +1,7 @@
 ---
 title: "Bootcamp week 4: Web applications"
 date: 2023-06-05
-tags: bootcamp
+tags: ["bootcamp"]
 summary: Everything we've learnt so far came together this week and we finally got to create some actual web apps! 🥳
 ---
 

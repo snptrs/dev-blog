@@ -2,7 +2,7 @@
 title: "Bootcamp weeks 11 and 12: Trail app"
 date: 2023-08-07
 featured: true
-tags: bootcamp
+tags: ["bootcamp"]
 coverImage: /assets/images/posts/trail-app-cover.jpg
 summary: The final project is completely self-driven, from ideation to deployment. An opportunity to put into practice everything we've learnt.
 ---

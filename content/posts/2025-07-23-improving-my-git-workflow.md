@@ -2,7 +2,7 @@
 title: "Improving my Git workflow"
 date: 2025-07-23
 featured: true
-tags: workflow
+tags: ["workflow"]
 coverImage: /assets/images/posts/photo-1556075798-4825dfaaf498.jpg
 summary: In my early experiments using AI for coding, I’d often get stuck in a spiral of it just hammering away adding more and more code to try and work around a problem that it didn’t understand.
 ---

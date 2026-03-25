@@ -1,7 +1,7 @@
 ---
 title: "Bootcamp week 5: Group project"
 date: 2023-06-11
-tags: bootcamp
+tags: ["bootcamp"]
 summary: "This week we did the first group project of the course, focusing on teamwork, agile ceremonies and building a web application."
 ---
 

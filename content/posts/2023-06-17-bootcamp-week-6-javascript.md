@@ -1,7 +1,7 @@
 ---
 title: "Bootcamp week 6: JavaScript fundamentals"
 date: 2023-06-17
-tags: bootcamp
+tags: ["bootcamp"]
 summary: It was all-change this week as we switched from Ruby to JavaScript. A tough but useful week of learning the fundamentals.
 ---
 

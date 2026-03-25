@@ -1,7 +1,7 @@
 ---
 title: "Bootcamp week 7: Frontend JavaScript"
 date: 2023-06-25
-tags: bootcamp
+tags: ["bootcamp"]
 summary: Having focused mainly on learning the basics of JavaScript and running it in Node last week, this week we started to focus more on the frontend.
 ---
 

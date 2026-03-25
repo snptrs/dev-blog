@@ -1,7 +1,7 @@
 ---
 title: "Bootcamp week 3: Databases"
 date: 2023-05-28
-tags: bootcamp
+tags: ["bootcamp"]
 summary: This week we started learning about databases. Using Ruby and PostgreSQL, we completed a range of modules and challenges starting with simple single-table designs, right through to more complex multi-...
 ---
 
