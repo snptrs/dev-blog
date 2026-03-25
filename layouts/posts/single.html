@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="mt-14" data-pagefind-body>
+  <header class="mb-10">
+    <h1 class="mb-4 text-5xl font-bold">{{ .Title }}</h1>
+    <p class="font-sans text-sm text-gray-400">
+      {{ .Date.Format "2 Jan 2006" }}
+    </p>
+    <hr class="mt-6 w-12 border-gray-600" />
+  </header>
+  <div
+    class="mt-10 space-y-6 font-light tracking-wide leading-relaxed prose-links post-content"
+  >
+    {{ .Content }}
+  </div>
+</article>
+{{ partial "lightbox.html" . }} {{ partial "post-nav.html" . }} {{ end }}
