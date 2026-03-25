@@ -20,17 +20,8 @@
   },
   "homepage": "https://github.com/snptrs/dev-blog#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-plugin-rss": "^2.0.4",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "@11ty/font-awesome": "^1.0.1",
-    "@tailwindcss/postcss": "^4.2.1",
-    "cssnano": "^7.1.2",
-    "eleventy-plugin-vento": "^5.3.0",
-    "markdown-it-footnote": "^4.0.0",
+    "@tailwindcss/cli": "^4.2.1",
     "pagefind": "^1.4.0",
-    "postcss": "^8.5.6",
     "tailwindcss": "^4.2.1"
   }
 }
