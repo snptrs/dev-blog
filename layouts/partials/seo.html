@@ -1,0 +1,16 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{{ $description := .Summary }}{{ with .Params.summary }}{{ $description = . }}{{ end }}
+{{ with $description }}<meta name="description" content="{{ . }}" />{{ end }}
+<link rel="canonical" href="{{ .Permalink }}" />
+
+{{ $ogType := "website" }}{{ if .IsPage }}{{ $ogType = "article" }}{{ end }}
+<meta property="og:type" content="{{ $ogType }}" />
+<meta property="og:title" content="{{ with .Title }}{{ . }} – {{ end }}{{ .Site.Title }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{ with $description }}<meta property="og:description" content="{{ . }}" />{{ end }}
+{{ with .Params.coverImage }}<meta property="og:image" content="{{ . | absURL }}" />{{ end }}
+
+<meta name="twitter:card" content="{{ if .Params.coverImage }}summary_large_image{{ else }}summary{{ end }}" />
+<meta name="twitter:title" content="{{ with .Title }}{{ . }} – {{ end }}{{ .Site.Title }}" />
+{{ with $description }}<meta name="twitter:description" content="{{ . }}" />{{ end }}
+{{ with .Params.coverImage }}<meta name="twitter:image" content="{{ . | absURL }}" />{{ end }}

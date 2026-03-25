@@ -3,6 +3,7 @@
   <head>
     <title>{{ with .Title }}{{ . }} – {{ end }}{{ .Site.Title }}</title>
     {{ hugo.Generator }}
+    {{ partial "seo.html" . }}
     <link rel="icon" href="/favicon.ico" />
     {{ with (templates.Defer (dict "key" "global")) }} {{ partial "css.html" . }} {{ end }}
     <link

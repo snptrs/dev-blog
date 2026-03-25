@@ -27,8 +27,8 @@ noClasses = true
 baseName = "feed"
 
 [outputs]
-home = ["HTML", "RSS"]
-section = ["HTML", "RSS"]
+home = ["HTML", "RSS", "Sitemap"]
+section = ["HTML", "RSS", "Sitemap"]
 
 [build]
 [build.buildStats]
