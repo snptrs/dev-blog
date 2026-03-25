@@ -2,22 +2,23 @@
 
 ## Build & Dev
 
-- **Build:** `npm run build` (runs Eleventy, outputs to `_site/`)
-- **Dev server:** `npm run serve` (Eleventy with live reload)
+- **Build:** `npm run build` (runs Hugo + Pagefind, outputs to `public/`)
+- **Dev server:** `hugo server` (live reload at http://localhost:1313)
 - **No test framework configured.**
 
 ## Architecture
 
-- **Static site** built with [Eleventy v3](https://www.11ty.dev/) (ESM, `"type": "module"`).
-- **Source:** `src/` → **Output:** `_site/`
-- **Templates:** Vento (`.vto`) via `eleventy-plugin-vento`. Pages in `src/`, layouts in `src/_includes/`, partials in `src/_includes/partials/`.
-- **CSS:** Tailwind CSS v4 processed via PostCSS + cssnano in `eleventy.config.js`. Entry point: `src/assets/styles/index.css`.
-- **Config:** `eleventy.config.js` — ESM default export; handles CSS build in `eleventy.before` hook.
+- **Static site** built with [Hugo](https://gohugo.io/).
+- **Content:** `content/` (Markdown) → **Output:** `public/`
+- **Templates:** Go templates (`.html`) in `layouts/`. Base layout in `layouts/_default/baseof.html`, partials in `layouts/partials/`, shortcodes in `layouts/shortcodes/`.
+- **CSS:** Tailwind CSS v4 via `css.TailwindCSS` Hugo pipe. Entry point: `assets/css/main.css`.
+- **Static assets:** `static/` (fonts, images, favicon) copied directly to output.
+- **Config:** `hugo.toml` — site configuration, taxonomies, permalinks, markup settings.
 
 ## Code Style
 
-- ESM imports (`import`/`export`), no CommonJS.
+- Go template syntax (`{{ }}`) in layout files.
 - Tailwind utility classes for styling; avoid custom CSS unless necessary.
-- Vento templates: lowercase filenames, use `{{ include "partials/name.vto" }}` for partials.
-- Front matter in YAML format at the top of content files (e.g., `title`, `layout`).
+- Templates: lowercase filenames, use `{{ partial "name.html" . }}` for partials.
+- Front matter in YAML format at the top of content files (e.g., `title`, `date`, `tags`).
 - HTML in templates uses 4-space indentation.

@@ -1,0 +1,35 @@
+{{ if or .NextInSection .PrevInSection }}
+<nav
+  class="grid grid-cols-2 gap-6 pt-8 mt-20 text-base border-t border-gray-600"
+>
+  {{ with .NextInSection }}
+  <a href="{{ .RelPermalink }}" class="group">
+    <p
+      class="mb-2 font-sans text-lg font-bold text-gray-200 group-hover:text-white"
+    >
+      <span class="group-hover:text-accent">&larr;</span>
+      {{ .Title }}
+    </p>
+    <p class="mt-2 mb-2 font-sans text-sm text-gray-500">
+      {{ .Date.Format "2 Jan 2006" }}
+    </p>
+  </a>
+  {{ else }}
+  <span></span>
+  {{ end }} {{ with .PrevInSection }}
+  <a href="{{ .RelPermalink }}" class="text-right group">
+    <p
+      class="mb-2 font-sans text-lg font-bold text-gray-200 group-hover:text-white"
+    >
+      {{ .Title }}
+      <span class="group-hover:text-accent">&rarr;</span>
+    </p>
+    <p class="mt-2 mb-2 font-sans text-sm text-gray-500">
+      {{ .Date.Format "2 Jan 2006" }}
+    </p>
+  </a>
+  {{ else }}
+  <span></span>
+  {{ end }}
+</nav>
+{{ end }}

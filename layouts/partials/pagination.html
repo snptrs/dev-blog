@@ -1,0 +1,17 @@
+{{ if or .HasPrev .HasNext }}
+<nav class="flex justify-between items-center pt-10 pb-4 font-sans text-base">
+  {{ if .HasPrev }}
+  <a href="{{ .Prev.URL }}" class="text-gray-400 hover:text-gray-200"
+    >&larr; Newer posts</a
+  >
+  {{ else }}
+  <span></span>
+  {{ end }} {{ if .HasNext }}
+  <a href="{{ .Next.URL }}" class="text-gray-400 hover:text-gray-200"
+    >Older posts &rarr;</a
+  >
+  {{ else }}
+  <span></span>
+  {{ end }}
+</nav>
+{{ end }}

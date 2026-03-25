@@ -1,0 +1,3 @@
+---
+fullWidth: true
+---

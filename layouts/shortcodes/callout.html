@@ -1,0 +1,27 @@
+{{ $icon := "" }}
+{{ $title := "" }}
+{{ $color := "" }}
+
+{{ if eq (.Get 0) "takeaways" }}
+    {{ $icon = "💡" }}
+    {{ $title = "Takeaways" }}
+    {{ $color = "callout-green" }}
+{{ else if eq (.Get 0) "challenges" }}
+    {{ $icon = "🤔" }}
+    {{ $title = "Biggest challenges" }}
+    {{ $color = "callout-purple" }}
+{{ else if eq (.Get 0) "tips" }}
+    {{ $icon = "🚀" }}
+    {{ $title = "Tip" }}
+    {{ $color = "callout-blue" }}
+{{ end }}
+
+<div class="callout {{ $color }} rounded-lg p-6 my-8">
+    <div class="flex items-start gap-3">
+        <span class="text-2xl leading-tight">{{ $icon }}</span>
+        <div>
+            <p class="font-sans font-bold text-lg mb-4">{{ $title }}</p>
+            <div class="callout-body">{{ .Inner | markdownify }}</div>
+        </div>
+    </div>
+</div>
