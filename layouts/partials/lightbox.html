@@ -1,11 +1,10 @@
 <dialog id="lightbox" class="lightbox">
-  <img id="lightbox-img" src="" alt="">
+  <img id="lightbox-img" src="" alt="" />
 </dialog>
 <script>
   (function () {
     var dialog = document.getElementById("lightbox");
     var dialogImg = document.getElementById("lightbox-img");
-
     document.querySelectorAll("article img").forEach(function (img) {
       if (img.closest("a")) return;
       img.style.cursor = "zoom-in";
@@ -15,7 +14,6 @@
         dialog.showModal();
       });
     });
-
     dialog.addEventListener("click", function () {
       this.close();
     });
