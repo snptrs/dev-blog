@@ -48,6 +48,7 @@ target = "assets/notwatching/hugo_stats.json"
 
 [imaging]
 quality = 85
+resampleFilter = "lanczos"
 
 [params]
 author = "Sean Peters"
