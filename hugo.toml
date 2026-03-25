@@ -1,0 +1,35 @@
+baseURL = "https://snptrs.dev/"
+title = "Sean Peters"
+languageCode = "en"
+paginate = 15
+
+[taxonomies]
+tag = "tags"
+
+[permalinks]
+[permalinks.page]
+posts = "/:contentbasename/"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.extensions]
+footnote = true
+[markup.goldmark.extensions.typographer]
+disable = false
+[markup.highlight]
+style = "nord"
+noClasses = true
+
+[outputFormats]
+[outputFormats.RSS]
+baseName = "feed"
+
+[build]
+[build.buildStats]
+enable = true
+[[build.cachebusters]]
+source = "assets/notwatching/hugo_stats\\.json"
+target = "css"
+
+[params]
+author = "Sean Peters"
