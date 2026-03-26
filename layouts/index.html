@@ -18,8 +18,7 @@ $paginator.HasPrev }}
   <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
     {{ range $featured }}
     <a href="{{ .RelPermalink }}" class="group">
-      {{ with .Params.coverImage }} {{ $path := strings.TrimPrefix "/assets/" .
-      }}
+      {{ with .Params.coverImage }} {{ $path := . }}
       <div class="overflow-hidden mb-4 rounded-lg aspect-video">
         {{ partial "picture.html" (dict "src" $path "alt" $.Title "class" "object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" "sizes" "750x") }}
       </div>

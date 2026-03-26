@@ -8,9 +8,9 @@
 <meta property="og:title" content="{{ with .Title }}{{ . }} – {{ end }}{{ .Site.Title }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 {{ with $description }}<meta property="og:description" content="{{ . }}" />{{ end }}
-{{ with .Params.coverImage }}{{ with resources.Get . }}<meta property="og:image" content="{{ (.Resize "1200x webp").AbsPermalink }}" />{{ end }}{{ end }}
+{{ with .Params.coverImage }}{{ with resources.Get . }}<meta property="og:image" content="{{ (.Resize "1200x webp").Permalink }}" />{{ end }}{{ end }}
 
 <meta name="twitter:card" content="{{ if .Params.coverImage }}summary_large_image{{ else }}summary{{ end }}" />
 <meta name="twitter:title" content="{{ with .Title }}{{ . }} – {{ end }}{{ .Site.Title }}" />
 {{ with $description }}<meta name="twitter:description" content="{{ . }}" />{{ end }}
-{{ with .Params.coverImage }}{{ with resources.Get . }}<meta name="twitter:image" content="{{ (.Resize "1200x webp").AbsPermalink }}" />{{ end }}{{ end }}
+{{ with .Params.coverImage }}{{ with resources.Get . }}<meta name="twitter:image" content="{{ (.Resize "1200x webp").Permalink }}" />{{ end }}{{ end }}
