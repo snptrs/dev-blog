@@ -59,7 +59,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: pnpm
 
       - name: Configure GitHub Pages
@@ -73,7 +73,9 @@ jobs:
         id: cache-restore
         uses: actions/cache/restore@v5
         with:
-          path: ${{ runner.temp }}/hugo_cache
+          path: |
+            ${{ runner.temp }}/hugo_cache
+            resources/_gen
           key: hugo-${{ github.run_id }}
           restore-keys: hugo-
 
@@ -84,12 +86,14 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
-          npx pagefind --site public --glob "**/*.html"
+          pnpm exec pagefind --site public --glob "**/*.html"
 
       - name: Cache save
         uses: actions/cache/save@v5
         with:
-          path: ${{ runner.temp }}/hugo_cache
+          path: |
+            ${{ runner.temp }}/hugo_cache
+            resources/_gen
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
 
       - name: Upload site artifact
