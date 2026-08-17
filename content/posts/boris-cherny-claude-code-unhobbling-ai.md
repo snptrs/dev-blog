@@ -11,10 +11,7 @@ Boris Cherney (the creator of Claude Code) recently [did an interview](https://w
 
 When I first starting coding with AI, I got pretty bad results unless I gave it a lot of context, skills and specific prompting. I used [Superpowers](https://github.com/obra/superpowers) for a while but I felt it was overkill, so I created my own simplified version. Then I started to feel that, as the models were getting more intelligent, trying to force them to use TDD or verify tasks the same way a human would was actually producing worse results.
 
-Cherney says that for Opus 5, they deleted 80% of the system prompt. And he gives a couple of suggestions for how you can replace the system prompt to see what results you get:
-
-- Use the `--system-prompt` flag to completely replace the system prompt with custom text, e.g. `claude --system-prompt "You are a React expert"` ([Docs](https://code.claude.com/docs/en/cli-reference#cli-flags))
-- Use `--bare` to skip auto discovery of hooks, skills, memories etc. ([Docs](https://code.claude.com/docs/en/headless#start-faster-with-bare-mode))
+Cherney says that for Opus 5, they deleted 80% of the system prompt.
 
 > what's interesting is that the model is actually a little bit more intelligent without these prompts. That's something that we've been finding. But when you use Claude code as a product, you do actually want some of these prompts because it helps you use the product and it it helps the the product behave and the model behave in the way that you would want when when you're using it as a person. ([4:30](https://youtu.be/qyPCVqFUyDo?si=iMrW9OrLVe3Uihr2&t=271))
 
