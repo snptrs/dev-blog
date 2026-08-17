@@ -1,0 +1,9 @@
+{{/* Inline SVG icon from assets/icons. The site uses three glyphs, so inlining
+them beats a render-blocking third-party stylesheet plus icon font in front of
+first paint. Each file carries class="icon"; extra classes are spliced onto it.
+Icons size off font-size (.icon is 1em square), so pass a text-* utility. */}}
+{{- $name := .name -}} {{- $path := printf "icons/%s.svg" $name -}} {{- with
+resources.Get $path -}} {{- $svg := .Content -}} {{- with $.class -}} {{- $svg =
+replace $svg `class="icon"` (printf `class="icon %s"` .) 1 -}} {{- end -}} {{-
+$svg | safeHTML -}} {{- else -}} {{- errorf "icon.html: no icon asset at %q"
+$path -}} {{- end -}}

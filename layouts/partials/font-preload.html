@@ -1,0 +1,20 @@
+{{/* Preloading lets the browser fetch the fonts in parallel with the stylesheet
+     instead of waiting for it to download and parse the @font-face rules, which
+     is what causes the visible swap from the fallback face.
+
+     crossorigin is required even though the fonts are same-origin: CSS always
+     fetches fonts in anonymous CORS mode, so a preload without it is a separate
+     request and the font downloads twice.
+
+     All three weights render on a post page (light body text, regular, bold
+     headings), and preloading them on list pages warms the cache for the click
+     through to a post. */}}
+{{ range slice "fira-sans-light" "fira-sans-regular" "fira-sans-bold" }}
+    <link
+        rel="preload"
+        href="{{ printf "/assets/fonts/%s.woff2" . | relURL }}"
+        as="font"
+        type="font/woff2"
+        crossorigin
+    />
+{{ end }}

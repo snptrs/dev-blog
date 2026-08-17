@@ -41,6 +41,16 @@ h6 {
   font-family: var(--font-sans);
 }
 
+/* Inline icons (see partials/icon.html) size off the current font-size and sit
+   on the text baseline, so a text-* utility scales them. */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
 .post-content h2 {
   @apply text-3xl font-bold mt-10 mb-4;
 }
