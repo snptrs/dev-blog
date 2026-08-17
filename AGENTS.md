@@ -2,7 +2,7 @@
 
 ## Build & Dev
 
-- **Build:** `npm run build` (runs Hugo + Pagefind, outputs to `public/`)
+- **Build:** `pnpm build` (runs Hugo + Pagefind, outputs to `public/`)
 - **Dev server:** `hugo server` (live reload at http://localhost:1313)
 - **No test framework configured.**
 
@@ -21,4 +21,3 @@
 - Tailwind utility classes for styling; avoid custom CSS unless necessary.
 - Templates: lowercase filenames, use `{{ partial "name.html" . }}` for partials.
 - Front matter in YAML format at the top of content files (e.g., `title`, `date`, `tags`).
-- HTML in templates uses 4-space indentation.
