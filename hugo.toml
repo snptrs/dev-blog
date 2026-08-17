@@ -1,6 +1,11 @@
 baseURL = "https://snptrs.dev/"
 title = "Sean Peters"
 languageCode = "en"
+# Hugo title-cases auto-generated page titles by default, which turns the "ai"
+# tag into "Ai". "none" keeps tag names exactly as written in front matter.
+# Section and taxonomy list pages lose their auto-capitalisation too, hence the
+# _index.md files under content/posts/ and content/tags/.
+titleCaseStyle = "none"
 [pagination]
 pagerSize = 15
 
