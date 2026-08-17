@@ -2,7 +2,7 @@
 title: "Boris Cherney on Claude Code and unhobbling AI"
 date: 2026-08-17
 tags: ["ai", "claude code"]
-summary:
+summary: "The creator of Claude Code talks about how removing system prompts and guardrails can actually improve output quality."
 ---
 
 Boris Cherney (the creator of Claude Code) recently [did an interview](https://www.youtube.com/watch?v=qyPCVqFUyDo) with Y Combinator. A lot of his insights are focused on how we 'unhobble' models, or stop interfering with how they'd naturally go about solving a problem.
