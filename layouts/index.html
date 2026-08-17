@@ -6,41 +6,18 @@ $paginator.HasPrev }}
   .Site.Params.author "class" "mb-5 w-32 h-32 rounded-full" "sizes" "256x") }}
   <p class="text-gray-300">Hi 👋 I'm Sean. I'm a software developer.</p>
 </section>
-{{ $featured := first 3 (sort (where .Site.RegularPages "Params.featured" true)
-"Date" "desc") }} {{ if $featured }}
-<section class="px-6 pb-12 mx-auto max-w-5xl">
-  <h2
-    class="font-sans text-xs font-bold tracking-widest text-gray-400 uppercase"
-  >
-    Featured posts
-  </h2>
-  <hr class="mt-3 mb-8 border-gray-600" />
-  <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-    {{ range $featured }}
-    <a href="{{ .RelPermalink }}" class="group">
-      {{ with .Params.coverImage }} {{ $path := . }}
-      <div class="overflow-hidden mb-4 rounded-lg aspect-video">
-        {{ partial "picture.html" (dict "src" $path "alt" $.Title "class" "object-cover w-full h-full transition-transform duration-300 group-hover:scale-105" "sizes" "750x") }}
-      </div>
-      {{ end }}
-      <h3 class="font-sans text-lg font-bold group-hover:text-gray-400">
-        {{ .Title }}
-      </h3>
-    </a>
-    {{ end }}
-  </div>
-</section>
-{{ end }} {{ end }}
+{{ end }}
 <div class="py-10 px-6 mx-auto max-w-2xl">
   {{ range $index, $post := $paginator.Pages }}
   <article>
-    <a href="{{ .RelPermalink }}" class="flex gap-6 items-center py-5 group">
+    <a href="{{ .RelPermalink }}" class="flex gap-6 items-start py-5 group">
       {{ partial "post-date.html" .Date }}
-      <h2
-        class="flex-grow min-w-0 text-lg font-bold group-hover:text-gray-400 truncate"
-      >
-        {{ .Title }}
-      </h2>
+      <div class="min-w-0 grow">
+        <h2 class="text-lg font-bold group-hover:text-gray-400 truncate">
+          {{ .Title }}
+        </h2>
+        <p class="mt-1 text-sm text-gray-400 line-clamp-2">{{ .Summary }}</p>
+      </div>
     </a>
   </article>
   {{ if ne $index (sub (len $paginator.Pages) 1) }}
