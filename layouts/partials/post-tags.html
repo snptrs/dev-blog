@@ -1,0 +1,15 @@
+{{ with .GetTerms "tags" }}
+<footer class="mt-12">
+  <ul class="flex flex-wrap gap-2 font-sans text-sm">
+    {{ range . }}
+    <li>
+      <a
+        href="{{ .RelPermalink }}"
+        class="inline-block py-1 px-3 text-gray-300 rounded-full bg-white/10 hover:text-white hover:bg-white/20"
+        >{{ .LinkTitle }}</a
+      >
+    </li>
+    {{ end }}
+  </ul>
+</footer>
+{{ end }}
