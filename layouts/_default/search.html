@@ -25,6 +25,8 @@
 <div id="search"></div>
 <script
   src="/pagefind/pagefind-ui.js"
-  onload="new PagefindUI({ element: '#search', showImages: false })"
+  onload="
+    new PagefindUI({ element: '#search', showImages: false, autofocus: true })
+  "
 ></script>
 {{ end }}
